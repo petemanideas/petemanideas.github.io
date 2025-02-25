@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>Compound Interest Calculator</h2>
+        
+        <label>Initial Investment ($):</label>
+        <input type="number" id="initialInvestment" placeholder="e.g. 1000">
+        
+        <label>Monthly Contribution ($):</label>
+        <input type="number" id="monthlyContribution" placeholder="e.g. 200">
+        
+        <label>Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="e.g. 5">
+        
+        <label>Compounding Frequency:</label>
+        <select id="compoundingFrequency">
+            <option value="1">Annually</option>
+            <option value="4">Quarterly</option>
+            <option value="12" selected>Monthly</option>
+            <option value="365">Daily</option>
+        </select>
+
+        <label>Number of Years:</label>
+        <input type="number" id="years" placeholder="e.g. 10">
+        
+        <button onclick="calculateCompoundInterest()">Calculate</button>
+
+        <h3>Results:</h3>
+        <p id="output"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
