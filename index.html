@@ -4,51 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compound Interest Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308191074184260"
-     crossorigin="anonymous">
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602">  
-    </script>
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MCH5TZH602');
- </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .calculator-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #e6ffe6;
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: right;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        canvas {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="calculator">
-        <h2>Compound Interest Calculator</h2>
-        
-        <label>Initial Investment ($):</label>
-        <input type="number" id="initialInvestment" placeholder="e.g. 1000">
-        
-        <label>Monthly Contribution ($):</label>
-        <input type="number" id="monthlyContribution" placeholder="e.g. 200">
-        
-        <label>Annual Interest Rate (%):</label>
-        <input type="number" id="interestRate" placeholder="e.g. 5">
-        
-        <label>Compounding Frequency:</label>
-        <select id="compoundingFrequency">
+
+    <h2>Compound Interest Calculator</h2>
+
+    <div class="calculator-container">
+        <label for="principal">Initial Investment ($):</label>
+        <input type="number" id="principal" placeholder="Enter amount" required>
+
+        <label for="monthly">Monthly Contribution ($):</label>
+        <input type="number" id="monthly" placeholder="Enter monthly amount" required>
+
+        <label for="rate">Annual Interest Rate (%):</label>
+        <input type="number" id="rate" placeholder="Enter interest rate" required>
+
+        <label for="frequency">Compounding Frequency:</label>
+        <select id="frequency">
             <option value="1">Annually</option>
             <option value="4">Quarterly</option>
-            <option value="12" selected>Monthly</option>
+            <option value="12">Monthly</option>
             <option value="365">Daily</option>
         </select>
 
-        <label>Number of Years:</label>
-        <input type="number" id="years" placeholder="e.g. 10">
-        
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" placeholder="Enter number of years" required>
+
         <button onclick="calculateCompoundInterest()">Calculate</button>
 
-        <h3>Results:</h3>
-        <p id="output"></p>
+        <div class="results" id="results">
+            <h3>Results:</h3>
+            <p><strong>Future Value:</strong> $<span id="futureValue"></span></p>
+
+            <h3>Yearly Breakdown</h3>
+            <table id="breakdownTable">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Balance ($)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3>Investment Growth Chart</h3>
+            <canvas id="growthChart"></canvas>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function calculateCompoundInterest() {
+            let P = parseFloat(document.getElementById("principal").value);
+            let M = parseFloat(document.getElementById("monthly").value);
+            let r = parseFloat(document.getElementById("rate").value) / 100;
+            let n = parseInt(document.getElementById("frequency").value);
+            let t = parseInt(document.getElementById("years").value);
+
+            if (isNaN(P) || isNaN(M) || isNaN(r) || isNaN(n) || isNaN(t) || P < 0 || M < 0 || r < 0 || t < 0) {
+                alert("Please enter valid positive numbers.");
+                return;
+            }
+
+            let balances = [];
+            let years = [];
+            let A = P;
+            
+            for (let year = 1; year <= t; year++) {
+                A = P * Math.pow(1 + (r / n), n * year);
+                for (let i = 1; i <= year * n; i++) {
+                    A += M * Math.pow(1 + (r / n), n * year - i);
+                }
+                balances.push(A.toFixed(2));
+                years.push(year);
+            }
+
+            document.getElementById("futureValue").innerText = A.toFixed(2);
+            document.getElementById("results").style.display = "block";
+
+            updateBreakdownTable(years, balances);
+            updateChart(years, balances);
+        }
+
+        function updateBreakdownTable(years, balances) {
+            let tableBody = document.querySelector("#breakdownTable tbody");
+            tableBody.innerHTML = "";
+            for (let i = 0; i < years.length; i++) {
+                let row = `<tr><td>${years[i]}</td><td>$${balances[i]}</td></tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+
+        function updateChart(years, balances) {
+            let ctx = document.getElementById("growthChart").getContext("2d");
+            if (window.chartInstance) {
+                window.chartInstance.destroy();
+            }
+            window.chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Investment Growth Over Time',
+                        data: balances,
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Years',
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Dollars ($)',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>
