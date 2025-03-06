@@ -5,6 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compound Interest Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	 <script>
+        function calculateCompoundInterest() {
+            let P = parseFloat(document.getElementById("principal").value);
+            let M = parseFloat(document.getElementById("monthly").value);
+            let r = parseFloat(document.getElementById("rate").value) / 100;
+            let n = parseInt(document.getElementById("frequency").value);
+            let t = parseInt(document.getElementById("years").value);
+
+            if (isNaN(P) || isNaN(M) || isNaN(r) || isNaN(n) || isNaN(t) || P < 0 || M < 0 || r < 0 || t < 0) {
+                alert("Please enter valid positive numbers.");
+                return;
+            }
+
+            let balances = [];
+            let years = [];
+            let A = P;
+            
+            for (let year = 1; year <= t; year++) {
+                A = P * Math.pow(1 + (r / n), n * year);
+                for (let i = 1; i <= year * n; i++) {
+                    A += M * Math.pow(1 + (r / n), n * year - i);
+                }
+                balances.push(A.toFixed(2));
+                years.push(year);
+            }
+
+            document.getElementById("futureValue").innerText = A.toFixed(2);
+            document.getElementById("results").style.display = "block";
+
+            updateBreakdownTable(years, balances);
+            updateChart(years, balances);
+        }
+
+        function updateBreakdownTable(years, balances) {
+            let tableBody = document.querySelector("#breakdownTable tbody");
+            tableBody.innerHTML = "";
+            for (let i = 0; i < years.length; i++) {
+                let row = `<tr><td>${years[i]}</td><td>$${balances[i]}</td></tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+
+        function updateChart(years, balances) {
+            let ctx = document.getElementById("growthChart").getContext("2d");
+            if (window.chartInstance) {
+                window.chartInstance.destroy();
+            }
+            window.chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Investment Growth Over Time',
+                        data: balances,
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { title: { display: true, text: 'Years' } },
+                        y: { title: { display: true, text: 'Dollars ($)', beginAtZero: true } }
+                    }
+                }
+            });
+        }
+    </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
