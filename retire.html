@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCH5TZH602');
+  </script>
+
+  <meta charset="UTF-8">
+  <title>How Much Do I Need to Retire?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-3308191074184260" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+  <div id=\"site-header\">
+    <noscript>
+      <div class=\"site-header\" style=\"text-align:left;\">
+        <a href=\"index.html\" style=\"font-weight:800; color:#2c3e50; text-decoration:none;\">CalcCompoundInterest</a>
+        <div style=\"margin-top:8px;\">
+          <a href=\"grow.html\">Money Growth</a> | <a href=\"retire.html\">Retire</a> | <a href=\"ETFvSavings.html\">ETF vs Savings</a> | <a href=\"startlate.html\">Start Late?</a> | <a href=\"how-compound-interest-works.html\">How it works</a>
+        </div>
+      </div>
+    </noscript>
+  </div>
+
+  <div class="hero">
+    <h1>How much do I need to retire?</h1>
+    <p>Estimate the nest egg you might need for your retirement income — and whether you’re on track.</p>
+    <img src="retirement-income.webp" alt="Retirement income and financial independence" loading="lazy">
+  </div>
+
+  <div class="content-container">
+    <div class="grid">
+      <div class="card">
+        <h2>Retirement calculator</h2>
+
+        <label>Desired annual retirement income ($)</label>
+        <input type="number" id="income" placeholder="e.g. 60000">
+
+        <label>Safe withdrawal rate (%)</label>
+        <input type="number" id="swr" value="4" placeholder="e.g. 4">
+
+        <label>Years until retirement</label>
+        <input type="number" id="years" placeholder="e.g. 25">
+
+        <label>Expected annual return (%)</label>
+        <input type="number" id="return" placeholder="e.g. 7">
+
+        <label>Current investments ($)</label>
+        <input type="number" id="current" placeholder="e.g. 50000">
+
+        <label>Monthly contribution ($)</label>
+        <input type="number" id="monthly" placeholder="e.g. 1000">
+
+        <button id="retireBtn">Calculate</button>
+
+        <div class="results" id="results">
+          <div class="big">Target nest egg: $<span id="required"></span></div>
+          <div class="big">Projected balance: $<span id="projected"></span></div>
+          <p><strong>Monthly needed:</strong> $<span id="neededMonthly"></span></p>
+          <p><strong>Extra per month:</strong> $<span id="extraMonthly"></span></p>
+          <p id="explain"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>How it works</h2>
+        <p class="muted">
+          This page uses a simple planning idea: a “safe withdrawal rate”.
+          For example, a 4% withdrawal rate suggests a $1,000,000 portfolio could
+          support roughly $40,000 per year (before tax and fees).
+        </p>
+
+        <div class="info-box">
+          Want to understand the compounding maths?
+          <a href="how-compound-interest-works.html">How compound interest really works →</a>
+        </div>
+
+        <p class="muted" style="margin-top:14px;">
+          Returns are never guaranteed. This tool is for educational purposes only.
+        </p>
+      </div>
+    </div>
+<div class="card faq" style="margin-top:16px;">
+  <h2>FAQ</h2>
+
+  <details>
+    <summary>What is a “safe withdrawal rate”?</summary>
+    <p>It’s a planning guideline that estimates how much you might withdraw annually from investments without running out too early. Many people use 4% as a rough starting point.</p>
+  </details>
+
+  <details>
+    <summary>Should I use 4%?</summary>
+    <p>It depends on your situation and market conditions. For more caution, some people use 3–3.5%. For more risk, some use higher. This tool lets you test different rates.</p>
+  </details>
+
+  <details>
+    <summary>What does “target nest egg” mean?</summary>
+    <p>It’s the estimated portfolio size needed to support your chosen annual income using your selected withdrawal rate.</p>
+  </details>
+
+  <details>
+    <summary>Why does my projected balance change a lot with return rate?</summary>
+    <p>Because compounding magnifies differences over long periods. Small return differences can produce very different outcomes over 20–30 years.</p>
+  </details>
+
+  <details>
+    <summary>How can I improve the result?</summary>
+    <p>Common levers are investing more monthly, increasing time (retire a bit later), or using more conservative income expectations. You can also explore compounding basics here: <a href="how-compound-interest-works.html">How it works →</a></p>
+  </details>
+</div>
+
+
+
+    <div class="other-tools">
+      <h3>Other calculators</h3>
+      <div class="mini-grid">
+        <a class="mini-btn" href="grow.html">Money Growth</a>
+        <a class="mini-btn" href="ETFvSavings.html">ETF vs Savings</a>
+        <a class="mini-btn" href="startlate.html">Start Late?</a>
+        <a class="mini-btn" href="index.html">Home</a>
+      </div>
+    </div>
+
+    </div>
+
+  <script src="calc-utils.js"></script>
+  <script src="retire.js"></script>
+  <div id="site-footer"></div>
+  <script src="includes.js"></script>
+</body>
+</html>

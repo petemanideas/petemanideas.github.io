@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCH5TZH602');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETF vs Savings Account</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-3308191074184260" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+  <div id=\"site-header\">
+    <noscript>
+      <div class=\"site-header\" style=\"text-align:left;\">
+        <a href=\"index.html\" style=\"font-weight:800; color:#2c3e50; text-decoration:none;\">CalcCompoundInterest</a>
+        <div style=\"margin-top:8px;\">
+          <a href=\"grow.html\">Money Growth</a> | <a href=\"retire.html\">Retire</a> | <a href=\"ETFvSavings.html\">ETF vs Savings</a> | <a href=\"startlate.html\">Start Late?</a> | <a href=\"how-compound-interest-works.html\">How it works</a>
+        </div>
+      </div>
+    </noscript>
+  </div>
+
+  <div class="hero">
+    <h1>ETF vs savings account</h1>
+    <p>Compare how your money could grow in an ETF vs a savings account over time (based on your assumptions).</p>
+    <img src="etf-vs-savings-hero.webp" alt="ETF vs savings comparison illustration" loading="lazy">
+  </div>
+
+  <div class="content-container">
+    <div class="grid">
+      <div class="card">
+        <h2>Compare investment over time</h2>
+
+        <label>Initial investment ($)</label>
+        <input type="number" id="principal" placeholder="e.g. 10000">
+
+        <label>Monthly contribution ($)</label>
+        <input type="number" id="monthly" placeholder="e.g. 500">
+
+        <label>Investment period (years)</label>
+        <input type="number" id="years" placeholder="e.g. 20">
+
+        <label>ETF expected annual return (%)</label>
+        <input type="number" id="etfRate" placeholder="e.g. 7">
+
+        <label>Savings annual interest rate (%)</label>
+        <input type="number" id="savRate" placeholder="e.g. 4">
+
+        <button id="etfBtn">Calculate</button>
+
+        <div class="results" id="results">
+          <div class="big">ETF projected final value: $<span id="etfFinal"></span></div>
+          <div class="big">Savings projected final value: $<span id="savFinal"></span></div>
+          <p><strong>Difference:</strong> $<span id="diff"></span></p>
+          <p id="verdict"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Growth chart</h2>
+        <p class="muted">This chart shows your projected end‑of‑year balance using monthly compounding.</p>
+        <canvas id="compareChart"></canvas>
+
+        <div class="info-box">
+          Want to understand the compounding maths?
+          <a href="how-compound-interest-works.html">How compound interest really works →</a>
+        </div>
+      </div>
+    </div>
+<div class="card faq" style="margin-top:16px;">
+  <h2>FAQ</h2>
+
+  <details>
+    <summary>Why might an ETF outperform a savings account?</summary>
+    <p>Historically, diversified market investments have often returned more than cash savings over long periods — but they also come with volatility and risk.</p>
+  </details>
+
+  <details>
+    <summary>Is the ETF return guaranteed?</summary>
+    <p>No. ETF returns fluctuate. This calculator uses your chosen return rate as an assumption so you can compare scenarios.</p>
+  </details>
+
+  <details>
+    <summary>Why does the gap become bigger over time?</summary>
+    <p>Because compounding amplifies the difference between two rates. The longer the time horizon, the more rate differences matter.</p>
+  </details>
+
+  <details>
+    <summary>Does this include ETF fees or taxes?</summary>
+    <p>No. Fees and taxes can reduce real-world returns. Use this as a directional comparison rather than an exact forecast.</p>
+  </details>
+
+  <details>
+    <summary>What’s a reasonable way to use this page?</summary>
+    <p>Try a conservative ETF return assumption and compare multiple timelines (10, 20, 30 years). For compounding basics, see <a href="how-compound-interest-works.html">How it works →</a></p>
+  </details>
+</div>
+
+
+
+    <div class="other-tools">
+      <h3>Other calculators</h3>
+      <div class="mini-grid">
+        <a class="mini-btn" href="grow.html">Money Growth</a>
+        <a class="mini-btn" href="retire.html">Retirement</a>
+        <a class="mini-btn" href="startlate.html">Start Late?</a>
+        <a class="mini-btn" href="index.html">Home</a>
+      </div>
+    </div>
+
+    </div>
+
+  <script src="calc-utils.js"></script>
+  <script src="etf-vs-savings.js"></script>
+  <div id="site-footer"></div>
+  <script src="includes.js"></script>
+</body>
+</html>

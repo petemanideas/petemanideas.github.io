@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCH5TZH602');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starting Late: Can I Still Retire?</title>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-3308191074184260" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="site.css" />
+</head>
+
+<body>
+  <div id=\"site-header\">
+    <noscript>
+      <div class=\"site-header\" style=\"text-align:left;\">
+        <a href=\"index.html\" style=\"font-weight:800; color:#2c3e50; text-decoration:none;\">CalcCompoundInterest</a>
+        <div style=\"margin-top:8px;\">
+          <a href=\"grow.html\">Money Growth</a> | <a href=\"retire.html\">Retire</a> | <a href=\"ETFvSavings.html\">ETF vs Savings</a> | <a href=\"startlate.html\">Start Late?</a> | <a href=\"how-compound-interest-works.html\">How it works</a>
+        </div>
+      </div>
+    </noscript>
+  </div>
+
+  <div class="hero">
+    <h1>Starting late: can I still retire?</h1>
+    <p>
+      If you didn’t start investing early, use this calculator to see how much extra you may need to invest each month
+      to reach your retirement goal.
+    </p>
+
+    <img src="startlate-hero.webp" alt="Starting late retirement planning illustration" loading="lazy">
+  </div>
+
+  <div class="content-container">
+    <div class="grid">
+      <div class="card">
+        <h2>Catch-up calculator</h2>
+
+        <label>Target retirement amount ($)</label>
+        <input type="number" id="targetAmount" placeholder="e.g. 1000000">
+
+        <label>Current investments ($)</label>
+        <input type="number" id="currentBalance" placeholder="e.g. 20000">
+
+        <label>Current age</label>
+        <input type="number" id="currentAge" placeholder="e.g. 50">
+
+        <label>Retirement age</label>
+        <input type="number" id="retireAge" placeholder="e.g. 65">
+
+        <label>Current monthly contribution ($)</label>
+        <input type="number" id="monthlyContribution" placeholder="e.g. 800">
+
+        <label>Expected annual return (%)</label>
+        <input type="number" id="annualReturn" placeholder="e.g. 7">
+
+        <button id="calcBtn">Calculate</button>
+
+        <div class="results" id="results">
+          <div class="big">Projected retirement fund: $<span id="projected"></span></div>
+          <div class="big">Monthly needed to hit target: $<span id="requiredMonthly"></span></div>
+          <p><strong>Extra per month:</strong> $<span id="extraMonthly"></span></p>
+          <p id="message" class="muted"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>What this means</h2>
+        <p class="muted">
+          This estimates the monthly contribution needed to reach your target by your retirement age,
+          based on monthly compounding. It’s a planning tool, not financial advice.
+        </p>
+
+        <div class="info-box">
+          Want to understand the maths behind compounding?
+          <a href="how-compound-interest-works.html">How compound interest really works →</a>
+        </div>
+
+        <p class="muted" style="margin-top:14px;">
+          Tip: If the “extra per month” feels too high, try increasing your retirement age by 1–3 years and re‑run.
+        </p>
+      </div>
+    </div>
+<div class="card faq" style="margin-top:16px;">
+  <h2>FAQ</h2>
+
+  <details>
+    <summary>Is it too late to start investing?</summary>
+    <p>Often no — but time becomes your most important factor. This calculator helps you estimate the monthly contribution needed to reach a target within your timeline.</p>
+  </details>
+
+  <details>
+    <summary>What does “monthly needed” mean?</summary>
+    <p>It’s the estimated monthly contribution required (with your return assumption) to hit your target amount by your retirement age.</p>
+  </details>
+
+  <details>
+    <summary>Why does changing retirement age by a few years help so much?</summary>
+    <p>Extra years add both more contributions and more compounding. Even 1–3 years can make a big difference.</p>
+  </details>
+
+  <details>
+    <summary>What if the required monthly amount is unrealistic?</summary>
+    <p>Try adjusting the target, increasing the timeline, or using more conservative expectations. You can also check your assumptions on <a href="retire.html">Retirement</a>.</p>
+  </details>
+
+  <details>
+    <summary>Where can I learn the compound interest logic?</summary>
+    <p>See <a href="how-compound-interest-works.html">How compound interest really works →</a> for the formula and explanation.</p>
+  </details>
+</div>
+
+
+
+    <div class="other-tools">
+      <h3>Other calculators</h3>
+      <div class="mini-grid">
+        <a class="mini-btn" href="grow.html">Money Growth</a>
+        <a class="mini-btn" href="retire.html">Retirement</a>
+        <a class="mini-btn" href="ETFvSavings.html">ETF vs Savings</a>
+        <a class="mini-btn" href="how-compound-interest-works.html">How it works</a>
+      </div>
+    </div>
+
+    </div>
+
+  <script src="calc-utils.js"></script>
+  <script src="startlate.js"></script>
+  <div id="site-footer"></div>
+  <script src="includes.js"></script>
+</body>
+</html>
