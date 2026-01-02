@@ -8,7 +8,6 @@ async function loadInclude(targetId, url) {
     if (!res.ok) throw new Error("HTTP " + res.status);
     el.innerHTML = await res.text();
   } catch (e) {
-    // Fallback: keep any existing content in the element (noscript / hardcoded)
     console.warn("Include failed:", url, e);
   }
 }
@@ -29,12 +28,21 @@ function highlightActiveNav() {
   const header = document.getElementById("site-header");
   if (!header) return;
 
-  const path = (location.pathname || "").split("/").pop() || "index.html";
+  const path = (location.pathname || "/").replace(/\/+$/, "");
+  const isArticles = path.startsWith("/articles/");
+  const basename = path.split("/").pop() || "index.html";
+
   const links = header.querySelectorAll("nav a[href]");
 
   links.forEach(a => {
-    const href = a.getAttribute("href");
-    const isActive = href === path || (path === "" && href === "index.html");
+    const href = a.getAttribute("href") || "";
+    const isActive =
+      href === path ||
+      href === ("/" + basename) ||
+      (path === "" && href === "/") ||
+      (basename === "index.html" && (href === "/" || href === "/index.html")) ||
+      (isArticles && href === "/articles/index.html");
+
     if (isActive) {
       a.classList.add("active");
       a.setAttribute("aria-current", "page");
@@ -48,8 +56,8 @@ function highlightActiveNav() {
 document.addEventListener("DOMContentLoaded", async () => {
   ensureTopAnchor();
 
-  await loadInclude("site-header", "header.html");
+  await loadInclude("site-header", "/header.html");
   highlightActiveNav();
 
-  await loadInclude("site-footer", "footer.html");
+  await loadInclude("site-footer", "/footer.html");
 });
