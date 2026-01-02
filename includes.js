@@ -39,7 +39,6 @@ function highlightActiveNav() {
     const isActive =
       href === path ||
       href === ("/" + basename) ||
-      (path === "" && href === "/") ||
       (basename === "index.html" && (href === "/" || href === "/index.html")) ||
       (isArticles && href === "/articles/index.html");
 
