@@ -394,3 +394,8 @@ canvas{ max-width: 100%; margin-top: 12px; }
   text-decoration: none;
 }
 .faq a:hover{ text-decoration: underline; }
+
+
+/* AdSense manual units */
+.ad-container{margin:18px 0;}
+.ad-container ins{display:block;}
