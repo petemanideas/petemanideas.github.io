@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles: Investing & Compound Interest Examples</title>
-  <meta name="description" content="Practical articles that explain investing maths and link to our calculators.">
+  <meta name="description" content="Practical articles that answer specific investing maths questions and link into calculators.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308191074184260"
      crossorigin="anonymous"></script>
 
@@ -25,7 +25,7 @@
   <div class="content-container">
     <div class="hero">
       <h1>Articles</h1>
-      <p>Short, practical guides that answer specific questions — with calculators to help you run your own numbers.</p>
+      <p>Use the search to find what you want, or browse by category. Every article links to a calculator so you can run your own numbers.</p>
       <a class="calc-btn" href="/grow.html">Start with Money Growth</a>
     </div>
 
@@ -43,162 +43,437 @@
 </div>
 
     <div class="card" style="margin-top:16px;">
+      <h2>Find an article</h2>
+      <input id="articleSearch" type="text" placeholder="Search: e.g. $200 a month, retire at 55, ETF vs savings…" 
+        style="width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.06); color: inherit;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <button class="mini-btn" data-filter="all" type="button">All</button>
+        <button class="mini-btn" data-filter="weekly" type="button">Weekly examples</button>
+        <button class="mini-btn" data-filter="monthly" type="button">Monthly examples</button>
+        <button class="mini-btn" data-filter="retirement" type="button">Retirement</button>
+      </div>
+      <p class="muted" id="articleCount" style="margin-top:10px;"></p>
+    </div>
+
+    <div id="articlesWrap">
+      <h2 style="margin-top:18px;">Weekly investing examples</h2>
+      
+
+      <h2 style="margin-top:24px;">Monthly investing examples</h2>
+      <div class="card article-card" data-cat="monthly" data-title="$100 a month invested for 10 years Estimate what $100 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/100-a-month-10-years.html" style="text-decoration:none; color: var(--heading);">$100 a month invested for 10 years</a></h2>
+  <p class="muted">Estimate what $100 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-month-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$100 a month invested for 20 years Estimate what $100 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/100-a-month-20-years.html" style="text-decoration:none; color: var(--heading);">$100 a month invested for 20 years</a></h2>
+  <p class="muted">Estimate what $100 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-month-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$100 a month invested for 30 years Estimate what $100 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/100-a-month-30-years.html" style="text-decoration:none; color: var(--heading);">$100 a month invested for 30 years</a></h2>
+  <p class="muted">Estimate what $100 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-month-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$1000 a month invested for 10 years Estimate what $1000 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/1000-a-month-10-years.html" style="text-decoration:none; color: var(--heading);">$1000 a month invested for 10 years</a></h2>
+  <p class="muted">Estimate what $1000 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/1000-a-month-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$1000 a month invested for 20 years Estimate what $1000 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/1000-a-month-20-years.html" style="text-decoration:none; color: var(--heading);">$1000 a month invested for 20 years</a></h2>
+  <p class="muted">Estimate what $1000 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/1000-a-month-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$200 a month invested for 10 years Estimate what $200 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/200-a-month-10-years.html" style="text-decoration:none; color: var(--heading);">$200 a month invested for 10 years</a></h2>
+  <p class="muted">Estimate what $200 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-month-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$200 a month invested for 15 years Estimate what $200 per month invested for 15 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/200-a-month-15-years.html" style="text-decoration:none; color: var(--heading);">$200 a month invested for 15 years</a></h2>
+  <p class="muted">Estimate what $200 per month invested for 15 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-month-15-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$200 a month invested for 30 years Estimate what $200 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/200-a-month-30-years.html" style="text-decoration:none; color: var(--heading);">$200 a month invested for 30 years</a></h2>
+  <p class="muted">Estimate what $200 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-month-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$300 a month invested for 10 years Estimate what $300 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/300-a-month-10-years.html" style="text-decoration:none; color: var(--heading);">$300 a month invested for 10 years</a></h2>
+  <p class="muted">Estimate what $300 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/300-a-month-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$300 a month invested for 20 years Estimate what $300 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/300-a-month-20-years.html" style="text-decoration:none; color: var(--heading);">$300 a month invested for 20 years</a></h2>
+  <p class="muted">Estimate what $300 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/300-a-month-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$300 a month invested for 30 years Estimate what $300 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/300-a-month-30-years.html" style="text-decoration:none; color: var(--heading);">$300 a month invested for 30 years</a></h2>
+  <p class="muted">Estimate what $300 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/300-a-month-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$500 a month invested for 10 years Estimate what $500 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/500-a-month-10-years.html" style="text-decoration:none; color: var(--heading);">$500 a month invested for 10 years</a></h2>
+  <p class="muted">Estimate what $500 per month invested for 10 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/500-a-month-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$500 a month invested for 20 years Estimate what $500 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/500-a-month-20-years.html" style="text-decoration:none; color: var(--heading);">$500 a month invested for 20 years</a></h2>
+  <p class="muted">Estimate what $500 per month invested for 20 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/500-a-month-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div><div class="card article-card" data-cat="monthly" data-title="$500 a month invested for 30 years Estimate what $500 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/500-a-month-30-years.html" style="text-decoration:none; color: var(--heading);">$500 a month invested for 30 years</a></h2>
+  <p class="muted">Estimate what $500 per month invested for 30 years could grow to. Compare conservative vs optimistic return scenarios.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/500-a-month-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: monthly</span>
+  </div>
+</div>
+
+      <h2 style="margin-top:24px;">Retirement planning</h2>
+      <div class="card article-card" data-cat="retirement" data-title="How much do I need to retire at 55? Estimate the portfolio you may need to retire at 55 using income goals and withdrawal rates.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/how-much-to-retire-at-55.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire at 55?</a></h2>
+  <p class="muted">Estimate the portfolio you may need to retire at 55 using income goals and withdrawal rates.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-to-retire-at-55.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: retirement</span>
+  </div>
+</div><div class="card article-card" data-cat="retirement" data-title="How much do I need to retire at 70? Estimate how much you might need to retire at 70 using income goals and withdrawal rates.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/how-much-to-retire-at-70.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire at 70?</a></h2>
+  <p class="muted">Estimate how much you might need to retire at 70 using income goals and withdrawal rates.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-to-retire-at-70.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: retirement</span>
+  </div>
+</div><div class="card article-card" data-cat="retirement" data-title="Retire early vs retire later: what changes? Compare the impact of retiring early vs later on your required portfolio size.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/retire-early-vs-retire-later.html" style="text-decoration:none; color: var(--heading);">Retire early vs retire later: what changes?</a></h2>
+  <p class="muted">Compare the impact of retiring early vs later on your required portfolio size.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/retire-early-vs-retire-later.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: retirement</span>
+  </div>
+</div><div class="card article-card" data-cat="retirement" data-title="How much do I need to retire on $100,000 a year? Estimate a retirement portfolio target for $100,000/year using different withdrawal rates.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/retire-on-100000-a-year.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire on $100,000 a year?</a></h2>
+  <p class="muted">Estimate a retirement portfolio target for $100,000/year using different withdrawal rates.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/retire-on-100000-a-year.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: retirement</span>
+  </div>
+</div><div class="card article-card" data-cat="retirement" data-title="How much income can my portfolio generate? Estimate how much annual income your portfolio might generate at different withdrawal rates.">
+  <h2 style="margin-bottom:6px;"><a href="/articles/retirement-income-from-portfolio.html" style="text-decoration:none; color: var(--heading);">How much income can my portfolio generate?</a></h2>
+  <p class="muted">Estimate how much annual income your portfolio might generate at different withdrawal rates.</p>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/retirement-income-from-portfolio.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: retirement</span>
+  </div>
+</div>
+
+      <h2 style="margin-top:24px;">Other</h2>
+      <div class="card article-card" data-cat="other" data-title="$100 a week invested for 10 years Model what $100 per week invested for 10 years could grow to. Compare multiple return rates using the calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/100-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$100 a week invested for 10 years</a></h2>
   <p class="muted">Model what $100 per week invested for 10 years could grow to. Compare multiple return rates using the calculator.</p>
-  <a class="mini-btn" href="/articles/100-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$100 a week invested for 20 years Model what $100 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/100-a-week-20-years.html" style="text-decoration:none; color: var(--heading);">$100 a week invested for 20 years</a></h2>
   <p class="muted">Model what $100 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/100-a-week-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-week-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$100 a week invested for 30 years Model what $100 a week invested for 30 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/100-a-week-30-years.html" style="text-decoration:none; color: var(--heading);">$100 a week invested for 30 years</a></h2>
   <p class="muted">Model what $100 a week invested for 30 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/100-a-week-30-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/100-a-week-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$1000 a week invested for 10 years Model what $1000 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/1000-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$1000 a week invested for 10 years</a></h2>
   <p class="muted">Model what $1000 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/1000-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/1000-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much will $10,000 be worth in 15 years? Estimate what $10,000 could grow to over 15 years at different return rates. Use the calculator to test scenarios.">
   <h2 style="margin-bottom:6px;"><a href="/articles/10000-worth-in-15-years.html" style="text-decoration:none; color: var(--heading);">How much will $10,000 be worth in 15 years?</a></h2>
   <p class="muted">Estimate what $10,000 could grow to over 15 years at different return rates. Use the calculator to test scenarios.</p>
-  <a class="mini-btn" href="/articles/10000-worth-in-15-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/10000-worth-in-15-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$200 a month invested for 20 years Estimate what $200 per month invested for 20 years could grow to. Compare multiple return-rate scenarios.">
   <h2 style="margin-bottom:6px;"><a href="/articles/200-a-month-20-years.html" style="text-decoration:none; color: var(--heading);">$200 a month invested for 20 years</a></h2>
   <p class="muted">Estimate what $200 per month invested for 20 years could grow to. Compare multiple return-rate scenarios.</p>
-  <a class="mini-btn" href="/articles/200-a-month-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-month-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$200 a week invested for 10 years Model what $200 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/200-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$200 a week invested for 10 years</a></h2>
   <p class="muted">Model what $200 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/200-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$200 a week invested for 20 years Model what $200 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/200-a-week-20-years.html" style="text-decoration:none; color: var(--heading);">$200 a week invested for 20 years</a></h2>
   <p class="muted">Model what $200 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/200-a-week-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/200-a-week-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$25 a week invested for 20 years Model what $25 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/25-a-week-20-years.html" style="text-decoration:none; color: var(--heading);">$25 a week invested for 20 years</a></h2>
   <p class="muted">Model what $25 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/25-a-week-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/25-a-week-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$25 a week invested for 25 years Model what $25 a week invested for 25 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/25-a-week-25-years.html" style="text-decoration:none; color: var(--heading);">$25 a week invested for 25 years</a></h2>
   <p class="muted">Model what $25 a week invested for 25 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/25-a-week-25-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/25-a-week-25-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$25 a week invested for 30 years Model what $25 a week invested for 30 years could grow to. Compare conservative vs optimistic return rates.">
   <h2 style="margin-bottom:6px;"><a href="/articles/25-a-week-30-years.html" style="text-decoration:none; color: var(--heading);">$25 a week invested for 30 years</a></h2>
   <p class="muted">Model what $25 a week invested for 30 years could grow to. Compare conservative vs optimistic return rates.</p>
-  <a class="mini-btn" href="/articles/25-a-week-30-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/25-a-week-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$25 a week invested for 40 years Model what $25 a week invested for 40 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/25-a-week-40-years.html" style="text-decoration:none; color: var(--heading);">$25 a week invested for 40 years</a></h2>
   <p class="muted">Model what $25 a week invested for 40 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/25-a-week-40-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/25-a-week-40-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$300 a week invested for 10 years Model what $300 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/300-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$300 a week invested for 10 years</a></h2>
   <p class="muted">Model what $300 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/300-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/300-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$50 a week invested for 10 years Model what $50 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/50-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$50 a week invested for 10 years</a></h2>
   <p class="muted">Model what $50 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/50-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/50-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$50 a week invested for 15 years Model what $50 a week invested for 15 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/50-a-week-15-years.html" style="text-decoration:none; color: var(--heading);">$50 a week invested for 15 years</a></h2>
   <p class="muted">Model what $50 a week invested for 15 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/50-a-week-15-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/50-a-week-15-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$50 a week invested for 20 years See what $50 a week could grow to over 20 years at different return rates. Use the calculator and compare scenarios.">
   <h2 style="margin-bottom:6px;"><a href="/articles/50-a-week-20-years.html" style="text-decoration:none; color: var(--heading);">$50 a week invested for 20 years</a></h2>
   <p class="muted">See what $50 a week could grow to over 20 years at different return rates. Use the calculator and compare scenarios.</p>
-  <a class="mini-btn" href="/articles/50-a-week-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/50-a-week-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$50 a week invested for 30 years Model what $50 a week invested for 30 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/50-a-week-30-years.html" style="text-decoration:none; color: var(--heading);">$50 a week invested for 30 years</a></h2>
   <p class="muted">Model what $50 a week invested for 30 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/50-a-week-30-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/50-a-week-30-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$500 a week invested for 10 years Model what $500 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/500-a-week-10-years.html" style="text-decoration:none; color: var(--heading);">$500 a week invested for 10 years</a></h2>
   <p class="muted">Model what $500 a week invested for 10 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/500-a-week-10-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/500-a-week-10-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="$75 a week invested for 20 years Model what $75 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/75-a-week-20-years.html" style="text-decoration:none; color: var(--heading);">$75 a week invested for 20 years</a></h2>
   <p class="muted">Model what $75 a week invested for 20 years could grow to. Compare multiple return-rate scenarios with our calculator.</p>
-  <a class="mini-btn" href="/articles/75-a-week-20-years.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/75-a-week-20-years.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Compound interest mistakes that cost you years of growth Common mistakes people make with compound interest: waiting to start, inconsistent contributions, high fees, and unrealistic assumptions.">
   <h2 style="margin-bottom:6px;"><a href="/articles/compound-interest-mistakes.html" style="text-decoration:none; color: var(--heading);">Compound interest mistakes that cost you years of growth</a></h2>
   <p class="muted">Common mistakes people make with compound interest: waiting to start, inconsistent contributions, high fees, and unrealistic assumptions.</p>
-  <a class="mini-btn" href="/articles/compound-interest-mistakes.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/compound-interest-mistakes.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Dollar‑cost averaging vs lump sum: which is better? Compare lump-sum investing vs dollar-cost averaging, and learn how to model both approaches using the calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/dollar-cost-averaging-vs-lump-sum.html" style="text-decoration:none; color: var(--heading);">Dollar‑cost averaging vs lump sum: which is better?</a></h2>
   <p class="muted">Compare lump-sum investing vs dollar-cost averaging, and learn how to model both approaches using the calculator.</p>
-  <a class="mini-btn" href="/articles/dollar-cost-averaging-vs-lump-sum.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/dollar-cost-averaging-vs-lump-sum.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="ETF vs savings account: pros and cons A plain-English guide to ETF vs savings accounts, with pros/cons and a calculator to compare outcomes over time.">
   <h2 style="margin-bottom:6px;"><a href="/articles/etf-vs-savings-pros-cons.html" style="text-decoration:none; color: var(--heading);">ETF vs savings account: pros and cons</a></h2>
   <p class="muted">A plain-English guide to ETF vs savings accounts, with pros/cons and a calculator to compare outcomes over time.</p>
-  <a class="mini-btn" href="/articles/etf-vs-savings-pros-cons.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/etf-vs-savings-pros-cons.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="High-interest savings vs index fund Compare high-interest savings accounts with index funds over different time horizons, and learn when each makes sense.">
   <h2 style="margin-bottom:6px;"><a href="/articles/high-interest-savings-vs-index-fund.html" style="text-decoration:none; color: var(--heading);">High-interest savings vs index fund</a></h2>
   <p class="muted">Compare high-interest savings accounts with index funds over different time horizons, and learn when each makes sense.</p>
-  <a class="mini-btn" href="/articles/high-interest-savings-vs-index-fund.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/high-interest-savings-vs-index-fund.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much emergency fund should I keep? A practical guide to emergency funds and when to invest vs save. Includes a calculator to compare outcomes over time.">
   <h2 style="margin-bottom:6px;"><a href="/articles/how-much-emergency-fund-should-i-keep.html" style="text-decoration:none; color: var(--heading);">How much emergency fund should I keep?</a></h2>
   <p class="muted">A practical guide to emergency funds and when to invest vs save. Includes a calculator to compare outcomes over time.</p>
-  <a class="mini-btn" href="/articles/how-much-emergency-fund-should-i-keep.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-emergency-fund-should-i-keep.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much do I need to retire at 60? Estimate how much you might need to retire at 60 using income goals and withdrawal rates. Use the retirement calculator to model it.">
   <h2 style="margin-bottom:6px;"><a href="/articles/how-much-needed-to-retire-at-60.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire at 60?</a></h2>
   <p class="muted">Estimate how much you might need to retire at 60 using income goals and withdrawal rates. Use the retirement calculator to model it.</p>
-  <a class="mini-btn" href="/articles/how-much-needed-to-retire-at-60.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-needed-to-retire-at-60.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much should I invest per month to reach $100,000? Estimate the monthly contribution needed to reach $100,000 over different timelines and return assumptions.">
   <h2 style="margin-bottom:6px;"><a href="/articles/how-much-to-invest-per-month-to-reach-100k.html" style="text-decoration:none; color: var(--heading);">How much should I invest per month to reach $100,000?</a></h2>
   <p class="muted">Estimate the monthly contribution needed to reach $100,000 over different timelines and return assumptions.</p>
-  <a class="mini-btn" href="/articles/how-much-to-invest-per-month-to-reach-100k.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-to-invest-per-month-to-reach-100k.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much should I invest per month to reach $1,000,000? Model how much you might need to invest each month to reach $1,000,000 by a target age or year.">
   <h2 style="margin-bottom:6px;"><a href="/articles/how-much-to-invest-per-month-to-reach-1m.html" style="text-decoration:none; color: var(--heading);">How much should I invest per month to reach $1,000,000?</a></h2>
   <p class="muted">Model how much you might need to invest each month to reach $1,000,000 by a target age or year.</p>
-  <a class="mini-btn" href="/articles/how-much-to-invest-per-month-to-reach-1m.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/how-much-to-invest-per-month-to-reach-1m.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Should I invest or save for a house deposit? A simple guide to choosing savings vs investing for a house deposit, with a calculator to compare outcomes and risk tradeoffs.">
   <h2 style="margin-bottom:6px;"><a href="/articles/invest-or-save-for-a-house-deposit.html" style="text-decoration:none; color: var(--heading);">Should I invest or save for a house deposit?</a></h2>
   <p class="muted">A simple guide to choosing savings vs investing for a house deposit, with a calculator to compare outcomes and risk tradeoffs.</p>
-  <a class="mini-btn" href="/articles/invest-or-save-for-a-house-deposit.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/invest-or-save-for-a-house-deposit.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much do I need to retire on $40,000 a year? Estimate a target retirement portfolio for $40,000/year spending using different withdrawal rates and a retirement calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/retire-on-40000-a-year.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire on $40,000 a year?</a></h2>
   <p class="muted">Estimate a target retirement portfolio for $40,000/year spending using different withdrawal rates and a retirement calculator.</p>
-  <a class="mini-btn" href="/articles/retire-on-40000-a-year.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/retire-on-40000-a-year.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="How much do I need to retire on $60,000 a year? Estimate the retirement portfolio size needed for $60,000 per year using different withdrawal rates, plus a calculator link.">
   <h2 style="margin-bottom:6px;"><a href="/articles/retire-on-60000-a-year.html" style="text-decoration:none; color: var(--heading);">How much do I need to retire on $60,000 a year?</a></h2>
   <p class="muted">Estimate the retirement portfolio size needed for $60,000 per year using different withdrawal rates, plus a calculator link.</p>
-  <a class="mini-btn" href="/articles/retire-on-60000-a-year.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/retire-on-60000-a-year.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Rule of 72: how long to double your money? Learn the Rule of 72 and estimate how long it takes to double your money at different return rates. Then test with a calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/rule-of-72-double-your-money.html" style="text-decoration:none; color: var(--heading);">Rule of 72: how long to double your money?</a></h2>
   <p class="muted">Learn the Rule of 72 and estimate how long it takes to double your money at different return rates. Then test with a calculator.</p>
-  <a class="mini-btn" href="/articles/rule-of-72-double-your-money.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/rule-of-72-double-your-money.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Safe withdrawal rate: 3% vs 4% vs 5% Compare 3%, 4%, and 5% withdrawal rates and see how they change your required retirement portfolio size.">
   <h2 style="margin-bottom:6px;"><a href="/articles/safe-withdrawal-rate-3-4-5.html" style="text-decoration:none; color: var(--heading);">Safe withdrawal rate: 3% vs 4% vs 5%</a></h2>
   <p class="muted">Compare 3%, 4%, and 5% withdrawal rates and see how they change your required retirement portfolio size.</p>
-  <a class="mini-btn" href="/articles/safe-withdrawal-rate-3-4-5.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/safe-withdrawal-rate-3-4-5.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Savings vs investing returns: why small differences matter See how a small return-rate difference compounds over time. Includes examples and a calculator to compare ETF vs savings.">
   <h2 style="margin-bottom:6px;"><a href="/articles/savings-vs-investing-return-difference.html" style="text-decoration:none; color: var(--heading);">Savings vs investing returns: why small differences matter</a></h2>
   <p class="muted">See how a small return-rate difference compounds over time. Includes examples and a calculator to compare ETF vs savings.</p>
-  <a class="mini-btn" href="/articles/savings-vs-investing-return-difference.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/savings-vs-investing-return-difference.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Starting investing at 40: what to do Starting at 40 can still work. Use the catch-up calculator to estimate monthly investing needed to hit a target by retirement.">
   <h2 style="margin-bottom:6px;"><a href="/articles/starting-investing-at-40.html" style="text-decoration:none; color: var(--heading);">Starting investing at 40: what to do</a></h2>
   <p class="muted">Starting at 40 can still work. Use the catch-up calculator to estimate monthly investing needed to hit a target by retirement.</p>
-  <a class="mini-btn" href="/articles/starting-investing-at-40.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/starting-investing-at-40.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Starting investing at 45: a simple catch‑up plan Starting at 45 isn’t too late. Estimate the monthly amount needed and explore timeline and return assumptions.">
   <h2 style="margin-bottom:6px;"><a href="/articles/starting-investing-at-45.html" style="text-decoration:none; color: var(--heading);">Starting investing at 45: a simple catch‑up plan</a></h2>
   <p class="muted">Starting at 45 isn’t too late. Estimate the monthly amount needed and explore timeline and return assumptions.</p>
-  <a class="mini-btn" href="/articles/starting-investing-at-45.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/starting-investing-at-45.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Starting investing at 50: how much per month? Starting at 50 can still work with a clear target and timeline. Estimate the monthly contribution needed using the catch-up calculator.">
   <h2 style="margin-bottom:6px;"><a href="/articles/starting-investing-at-50.html" style="text-decoration:none; color: var(--heading);">Starting investing at 50: how much per month?</a></h2>
   <p class="muted">Starting at 50 can still work with a clear target and timeline. Estimate the monthly contribution needed using the catch-up calculator.</p>
-  <a class="mini-btn" href="/articles/starting-investing-at-50.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/starting-investing-at-50.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Starting investing at 55: what’s realistic? Starting at 55 is challenging but not hopeless. Estimate monthly contributions and explore realistic targets and timelines.">
   <h2 style="margin-bottom:6px;"><a href="/articles/starting-investing-at-55.html" style="text-decoration:none; color: var(--heading);">Starting investing at 55: what’s realistic?</a></h2>
   <p class="muted">Starting at 55 is challenging but not hopeless. Estimate monthly contributions and explore realistic targets and timelines.</p>
-  <a class="mini-btn" href="/articles/starting-investing-at-55.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/starting-investing-at-55.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="Weekly vs monthly contributions: does it matter? Compare weekly vs monthly contributions and see what matters most. Includes simple conversion tips and modelling guidance.">
   <h2 style="margin-bottom:6px;"><a href="/articles/weekly-vs-monthly-contributions.html" style="text-decoration:none; color: var(--heading);">Weekly vs monthly contributions: does it matter?</a></h2>
   <p class="muted">Compare weekly vs monthly contributions and see what matters most. Includes simple conversion tips and modelling guidance.</p>
-  <a class="mini-btn" href="/articles/weekly-vs-monthly-contributions.html">Read article →</a>
-</div><div class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/weekly-vs-monthly-contributions.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
+</div><div class="card article-card" data-cat="other" data-title="What is the 4% rule? Understand the 4% rule, what it means, and how to use it as a planning guideline. Includes a retirement calculator link.">
   <h2 style="margin-bottom:6px;"><a href="/articles/what-is-the-4-percent-rule.html" style="text-decoration:none; color: var(--heading);">What is the 4% rule?</a></h2>
   <p class="muted">Understand the 4% rule, what it means, and how to use it as a planning guideline. Includes a retirement calculator link.</p>
-  <a class="mini-btn" href="/articles/what-is-the-4-percent-rule.html">Read article →</a>
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <a class="mini-btn" href="/articles/what-is-the-4-percent-rule.html">Read article →</a>
+    <span class="muted" style="font-size:0.9rem;">Category: other</span>
+  </div>
 </div>
+    </div>
 
     <div class="ad-container">
   <!-- horizontal strips -->
@@ -226,5 +501,40 @@
 
   <div id="site-footer"></div>
   <script src="/includes.js"></script>
+  <script>
+    (function() {
+      const search = document.getElementById('articleSearch');
+      const count = document.getElementById('articleCount');
+      const buttons = document.querySelectorAll('button[data-filter]');
+      const cards = Array.from(document.querySelectorAll('.article-card'));
+      let activeFilter = 'all';
+
+      function apply() {
+        const q = (search.value || '').toLowerCase().trim();
+        let visible = 0;
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-cat');
+          const hay = (card.getAttribute('data-title') || '').toLowerCase();
+          const matchQ = !q || hay.includes(q);
+          const matchCat = (activeFilter === 'all') || (cat === activeFilter);
+          const show = matchQ && matchCat;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        count.textContent = visible + ' article(s) shown';
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeFilter = btn.getAttribute('data-filter');
+          buttons.forEach(b => b.style.opacity = (b === btn) ? '1' : '0.85');
+          apply();
+        });
+      });
+
+      search.addEventListener('input', apply);
+      apply();
+    })();
+  </script>
 </body>
 </html>
