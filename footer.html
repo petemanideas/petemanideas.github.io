@@ -1,21 +1,13 @@
 <footer class="site-footer">
-  <div class="content-container" style="padding-top: 18px; padding-bottom: 18px;">
-    <div class="card" style="margin-top: 0;">
-      <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center;">
-        <div class="mini-grid" style="margin:0;">
-          <a class="mini-btn" href="/about.html">About</a>
-          <a class="mini-btn" href="/contact.html">Contact</a>
-          <a class="mini-btn" href="/privacypolicy.html">Privacy Policy</a>
-        </div>
-
-        <a class="mini-btn" href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-          Back to top
-        </a>
-      </div>
-
-      <p class="muted" style="margin-top: 12px; font-size: 0.95rem;">
-        Educational tools only — not financial advice.
-      </p>
-    </div>
+  <div class="site-footer-inner">
+    <nav aria-label="Footer">
+      <a href="/about.html">About</a>
+      <span class="sep">|</span>
+      <a href="/contact.html">Contact</a>
+      <span class="sep">|</span>
+      <a href="/privacypolicy.html">Privacy Policy</a>
+    </nav>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+    <p class="site-footer-note">Educational tools only — not financial advice. <a href="/disclaimer.html">Read full disclaimer</a>.</p>
   </div>
 </footer>
