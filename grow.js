@@ -84,11 +84,6 @@ const contribPerYear = (contribFreq === "weekly") ? 52 : 12;
 
   // Display results
   document.getElementById("futureValue").textContent = futureValue.toFixed(2);
-
-  // Clear compare results on normal calculate
-  const compareEl = document.getElementById("compareResults");
-  if (compareEl) { compareEl.style.display = "none"; compareEl.innerHTML = ""; }
-
   // Fill table
   const tableBody = document.querySelector("#breakdownTable tbody");
   tableBody.innerHTML = "";
@@ -119,16 +114,7 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
   const datasets = [];
 
   if (secondaryBalances !== null && Array.isArray(secondaryBalances)) {
-    datasets.push({
-      label: "Monthly (same annual total)",
-      data: secondaryBalances,
-      fill: false,
-      tension: 0.2,
-      borderColor: "rgb(255, 99, 132)",
-      borderWidth: 3,
-      borderDash: [6, 4],
-      pointRadius: 0
-    });
+    // Draw weekly first, then monthly on top so it stays visible even if lines are close.
     datasets.push({
       label: "Weekly (same annual total)",
       data: primaryBalances,
@@ -136,9 +122,22 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
       tension: 0.2,
       borderColor: "rgb(54, 162, 235)",
       borderWidth: 2,
-      pointRadius: 0
+      pointRadius: 0,
+      order: 1
     });
-    } else {
+    datasets.push({
+      label: "Monthly (same annual total)",
+      data: secondaryBalances,
+      fill: false,
+      tension: 0.2,
+      borderColor: "rgb(255, 99, 132)",
+      borderWidth: 4,
+      borderDash: [8, 5],
+      pointRadius: 2,
+      pointHoverRadius: 3,
+      order: 2
+    });
+  } else {
     datasets.push({
       label: "Investment Growth Over Time",
       data: primaryBalances,
@@ -165,6 +164,7 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
     }
   });
 }
+
 
 
 
@@ -239,9 +239,15 @@ function applyParams() {
   } catch (e) {}
 }
 
+function onCalcClick(){
+  const compareEl = document.getElementById("compareResults");
+  if (compareEl){ compareEl.style.display = "none"; compareEl.innerHTML = ""; }
+  calculateCompoundInterest();
+}
+
+document.getElementById("calcBtn").addEventListener("click", onCalcClick);
 document.addEventListener("DOMContentLoaded", applyParams);
 
 
-document.getElementById("calcBtn").addEventListener("click", calculateCompoundInterest);
 document.getElementById("compareBtn").addEventListener("click", compareWeeklyMonthly);
 
