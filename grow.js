@@ -17,10 +17,10 @@ function computeFutureValue(P, contribAmount, contribPerYear, r, n, t){
     }
 
     years.push(year);
-    balances.push(Number(A.toFixed(2)));
+    balances.push(A);
   }
 
-  return { futureValue: Number(A.toFixed(2)), years, balances };
+  return { futureValue: A, years, balances };
 }
 
 
@@ -47,11 +47,11 @@ function computeFutureValueDaily(P, contribAmount, contribPerYear, r, n, t){
 
     if (day % 365 === 0){
       years.push(day / 365);
-      balances.push(Number(A.toFixed(2)));
+      balances.push(A);
     }
   }
 
-  return { futureValue: Number(A.toFixed(2)), years, balances };
+  return { futureValue: A, years, balances };
 }
 
 
@@ -118,22 +118,27 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
 
   const datasets = [];
 
-  if (secondaryBalances && Array.isArray(secondaryBalances)) {
-    datasets.push({
-      label: "Weekly (same annual total)",
-      data: primaryBalances,
-      fill: false,
-      tension: 0.2,
-      borderColor: "rgb(54, 162, 235)"
-    });
+  if (secondaryBalances !== null && Array.isArray(secondaryBalances)) {
     datasets.push({
       label: "Monthly (same annual total)",
       data: secondaryBalances,
       fill: false,
       tension: 0.2,
-      borderColor: "rgb(255, 99, 132)"
+      borderColor: "rgb(255, 99, 132)",
+      borderWidth: 3,
+      borderDash: [6, 4],
+      pointRadius: 0
     });
-  } else {
+    datasets.push({
+      label: "Weekly (same annual total)",
+      data: primaryBalances,
+      fill: false,
+      tension: 0.2,
+      borderColor: "rgb(54, 162, 235)",
+      borderWidth: 2,
+      pointRadius: 0
+    });
+    } else {
     datasets.push({
       label: "Investment Growth Over Time",
       data: primaryBalances,
