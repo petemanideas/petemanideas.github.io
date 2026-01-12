@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCH5TZH602');
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308191074184260"
+     crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$200/Month Invested for 20 Years (S&P 500 Example + Calculator)</title>
+  <meta name="description" content="What happens if you invest $200 a month for 20 years in an S&P 500-style index fund? See example scenarios and run your own numbers with the calculator.">
+  <link rel="stylesheet" href="/site.css">
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <div class="content-container">
+    <div class="hero">
+      <h1>Investing $200 a month in the S&P 500 for 20 years</h1>
+      <p>Here’s how $200/month can compound over 20 years under different return assumptions. Then use the calculator to run your own S&P 500-style index fund scenarios.</p>
+      <a class="calc-btn" href="/grow.html">Open Money Growth calculator</a>
+    </div>
+
+    <div class="ad-container">
+      <!-- horizontal strips -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3308191074184260"
+           data-ad-slot="2819994557"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+  <h2>Investing $200/month for 20 years (S&P 500-style scenarios)</h2>
+  <p class="muted">
+The S&amp;P 500 is a stock index (not a guaranteed return). The best way to plan is to model a few different annual return assumptions.
+Below is an example of <strong>$200 per month</strong> invested for <strong>20 years</strong> under three scenarios.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left;">Assumed annual return</th>
+      <th>Years</th>
+      <th>Monthly contribution</th>
+      <th>Approx. balance (estimate)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left;">5% (conservative)</td>
+      <td>20</td>
+      <td>$200</td>
+      <td><span id="bal5"></span></td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">7% (middle)</td>
+      <td>20</td>
+      <td>$200</td>
+      <td><span id="bal7"></span></td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">10% (optimistic)</td>
+      <td>20</td>
+      <td>$200</td>
+      <td><span id="bal10"></span></td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted" style="margin-top:10px;">
+These are rough estimates to show how sensitive outcomes are to the return assumption. Use the calculator below to run your own numbers and timelines.
+</p>
+<script>
+  // rough FV of monthly contributions: FV = PMT * (( (1+r)^n - 1 ) / r)
+  function fvMonthly(pmt, annualRate, years){
+    var r = annualRate/12;
+    var n = years*12;
+    return pmt * ( (Math.pow(1+r, n) - 1) / r );
+  }
+  function fmt(x){
+    return x.toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
+  }
+  document.getElementById('bal5').textContent  = fmt(fvMonthly(200, 0.05, 20));
+  document.getElementById('bal7').textContent  = fmt(fvMonthly(200, 0.07, 20));
+  document.getElementById('bal10').textContent = fmt(fvMonthly(200, 0.10, 20));
+</script>
+
+</div>
+
+    <div class="card" style="margin-top:16px;">
+  <h2>What matters most</h2>
+  <ul class="muted" style="line-height:1.9;">
+  <li><strong>Time:</strong> the longer you invest, the more compounding can help.</li>
+  <li><strong>Contribution size:</strong> small increases can make a big difference over decades.</li>
+  <li><strong>Return assumption:</strong> even a few percent changes the outcome a lot.</li>
+  <li><strong>Consistency:</strong> regular investing often beats “perfect timing”.</li>
+</ul>
+</div>
+
+    <div class="card" style="margin-top:16px;">
+  <h2>Next step</h2>
+  <p class="muted">
+Open the Money Growth calculator and test your own timeline, contribution amount, and return assumptions. Try 5%, 7%, and 10% to see a range.
+</p>
+</div>
+
+    <div class="other-tools" style="margin-top:18px;">
+  <h3>Related tools & articles</h3>
+  <div class="mini-grid">
+        <a class="mini-btn" href="/grow.html">Open Money Growth calculator</a>
+        <a class="mini-btn" href="/articles/200-a-month-20-years.html">$200 a month invested for 20 years (generic)</a>
+        <a class="mini-btn" href="/articles/10000-invested-once-20-years.html">$10,000 invested once for 20 years</a>
+        <a class="mini-btn" href="/articles/weekly-vs-monthly-contributions.html">Weekly vs monthly: does it matter?</a>
+        <a class="mini-btn" href="/retire.html">Retirement calculator</a>
+        <a class="mini-btn" href="/how-compound-interest-works.html">How compound interest works</a>
+        <a class="mini-btn" href="/articles/index.html">Browse all articles</a>
+        <a class="mini-btn" href="/index.html">Back to home</a>
+  </div>
+</div>
+
+    <div class="card faq" style="margin-top:16px;">
+  <h2>FAQ</h2>
+  <details>
+    <summary>Is the S&P 500 guaranteed to return 7% or 10%?</summary>
+    <p>No. Markets vary year to year. The best practice is to model multiple scenarios and plan conservatively.</p>
+  </details>
+
+  <details>
+    <summary>Should I invest $200/month or more?</summary>
+    <p>Start where you can be consistent. If you can increase contributions over time, your future balance can grow significantly.</p>
+  </details>
+
+  <details>
+    <summary>Does investing earlier matter?</summary>
+    <p>Yes. Time is a powerful lever in compounding.</p>
+  </details>
+
+  <details>
+    <summary>Where do I run the full calculation?</summary>
+    <p>Use the <a href="/grow.html">Money Growth calculator</a> and adjust contributions, years, and rate.</p>
+  </details>
+</div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="/includes.js"></script>
+</body>
+</html>
