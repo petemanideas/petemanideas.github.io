@@ -171,10 +171,12 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
 
 
 
+
 function compareWeeklyMonthly(){
   const P = parseFloat(document.getElementById("principal").value);
   const contribAmount = parseFloat(document.getElementById("contribution").value);
   const selectedFreq = (document.getElementById("contribFreq")?.value || "monthly");
+  const compareMode = (document.getElementById("compareMode")?.value || "equal_annual");
   const r = parseFloat(document.getElementById("rate").value) / 100;
   const n = parseInt(document.getElementById("frequency").value, 10);
   const t = parseInt(document.getElementById("years").value, 10);
@@ -184,10 +186,34 @@ function compareWeeklyMonthly(){
     return;
   }
 
-  // Fair comparison: keep the annual total constant based on what the user entered.
-  const annualTotal = (selectedFreq === "weekly") ? contribAmount * 52 : contribAmount * 12;
-  const weeklyAmt = annualTotal / 52;
-  const monthlyAmt = annualTotal / 12;
+  let weeklyAmt, monthlyAmt, noteHtml;
+
+  if (compareMode === "same_amount") {
+    // Same amount per contribution (e.g., $100/week vs $100/month)
+    weeklyAmt = contribAmount;
+    monthlyAmt = contribAmount;
+
+    const annualWeekly = weeklyAmt * 52;
+    const annualMonthly = monthlyAmt * 12;
+
+    noteHtml = `
+      <div class="muted" style="margin-top:10px;">
+        Compare mode: <strong>Same contribution amount</strong>. This compares <strong>${formatCurrencyUSD(weeklyAmt)}/week</strong>
+        vs <strong>${formatCurrencyUSD(monthlyAmt)}/month</strong> (different yearly totals: ${formatCurrencyUSD(annualWeekly)}/yr vs ${formatCurrencyUSD(annualMonthly)}/yr).
+      </div>
+    `;
+  } else {
+    // Fair comparison: keep the annual total constant based on what the user entered.
+    const annualTotal = (selectedFreq === "weekly") ? contribAmount * 52 : contribAmount * 12;
+    weeklyAmt = annualTotal / 52;
+    monthlyAmt = annualTotal / 12;
+
+    noteHtml = `
+      <div class="muted" style="margin-top:10px;">
+        Compare mode: <strong>Equal annual total</strong> (${formatCurrencyUSD(annualTotal)}/yr). Weekly can be slightly higher because contributions get invested sooner.
+      </div>
+    `;
+  }
 
   // Use a daily timing simulation for the compare view so weekly deposits happen earlier than monthly deposits.
   const weekly = computeFutureValueDaily(P, weeklyAmt, 52, r, n, t);
@@ -200,12 +226,10 @@ function compareWeeklyMonthly(){
   if (compareEl){
     compareEl.style.display = "block";
     compareEl.innerHTML = `
-      <div class="row"><span class="label">Weekly (same annual total)</span><span class="value">${formatCurrencyUSD(weekly.futureValue)}</span></div>
-      <div class="row"><span class="label">Monthly (same annual total)</span><span class="value">${formatCurrencyUSD(monthly.futureValue)}</span></div>
+      <div class="row"><span class="label">Weekly</span><span class="value">${formatCurrencyUSD(weekly.futureValue)}</span></div>
+      <div class="row"><span class="label">Monthly</span><span class="value">${formatCurrencyUSD(monthly.futureValue)}</span></div>
       <div class="row"><span class="label">Difference</span><span class="value">${formatCurrencyUSD(diff)} (${pct.toFixed(2)}%)</span></div>
-      <div class="muted" style="margin-top:10px;">
-        Assumes the same annual contribution total (${formatCurrencyUSD(annualTotal)} / year). Weekly can be slightly higher because contributions get invested sooner.
-      </div>
+      ${noteHtml}
     `;
   }
 
@@ -219,6 +243,7 @@ function compareWeeklyMonthly(){
   // Re-draw the chart in compare mode (two lines).
   updateChart(weekly.years, weekly.balances, monthly.balances);
 }
+
 
 
 

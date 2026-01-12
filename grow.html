@@ -110,7 +110,16 @@
       <input type="number" id="years" placeholder="Enter number of years">
 
       <button id="calcBtn">Calculate</button>
-      <button id="compareBtn" class="secondary-btn" type="button">Compare weekly vs monthly</button>
+            <label>Compare method</label>
+      <select id="compareMode">
+        <option value="equal_annual" selected>Equal annual total (fair comparison)</option>
+        <option value="same_amount">Same contribution amount ($X each time)</option>
+      </select>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        “Equal annual total” compares timing only. “Same amount” compares $X/week vs $X/month (different yearly totals).
+      </p>
+
+<button id="compareBtn" class="secondary-btn" type="button">Compare weekly vs monthly</button>
 
       <div class="results" id="results">
         <div class="big">Future value: $<span id="futureValue"></span></div>
