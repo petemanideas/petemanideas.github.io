@@ -44,7 +44,10 @@ if ([P, contribAmount, r, n, t].some(v => isNaN(v)) || P < 0 || contribAmount < 
     return;
   }
 
-  const contribPerYear = (contribFreq === "weekly") ? 52 : 12;
+  
+  const resultsEl = document.getElementById("results");
+  if (resultsEl) resultsEl.style.display = "block";
+const contribPerYear = (contribFreq === "weekly") ? 52 : 12;
   const { futureValue, years, balances } = computeFutureValue(P, contribAmount, contribPerYear, r, n, t);
 
   // Display results
@@ -140,7 +143,10 @@ function compareWeeklyMonthly(){
     return;
   }
 
-  // Fair comparison: keep the annual total constant based on what the user entered.
+  
+  const resultsEl = document.getElementById("results");
+  if (resultsEl) resultsEl.style.display = "block";
+// Fair comparison: keep the annual total constant based on what the user entered.
   const annualTotal = (selectedFreq === "weekly") ? contribAmount * 52 : contribAmount * 12;
   const weeklyAmt = annualTotal / 52;
   const monthlyAmt = annualTotal / 12;
