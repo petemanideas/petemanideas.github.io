@@ -23,6 +23,38 @@ function computeFutureValue(P, contribAmount, contribPerYear, r, n, t){
   return { futureValue: Number(A.toFixed(2)), years, balances };
 }
 
+
+function computeFutureValueDaily(P, contribAmount, contribPerYear, r, n, t){
+  // Derive an effective daily rate consistent with the selected compounding frequency.
+  // effectiveAnnual = (1 + r/n)^n - 1, then dailyRate = (1 + effectiveAnnual)^(1/365) - 1
+  const effectiveAnnual = Math.pow(1 + (r / n), n) - 1;
+  const dailyRate = Math.pow(1 + effectiveAnnual, 1/365) - 1;
+
+  const totalDays = t * 365;
+  let A = P;
+
+  const balances = [];
+  const years = [];
+
+  // Distribute contributions across days as integers using flooring.
+  // countToday = floor(day * contribPerYear / 365) - floor((day-1) * contribPerYear / 365)
+  for (let day = 1; day <= totalDays; day++){
+    const countToday = Math.floor(day * contribPerYear / 365) - Math.floor((day - 1) * contribPerYear / 365);
+    if (countToday > 0){
+      A += contribAmount * countToday;
+    }
+    A *= (1 + dailyRate);
+
+    if (day % 365 === 0){
+      years.push(day / 365);
+      balances.push(Number(A.toFixed(2)));
+    }
+  }
+
+  return { futureValue: Number(A.toFixed(2)), years, balances };
+}
+
+
 function formatCurrencyUSD(x){
   try{
     return x.toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
@@ -91,13 +123,15 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
       label: "Weekly (same annual total)",
       data: primaryBalances,
       fill: false,
-      tension: 0.2
+      tension: 0.2,
+      borderColor: "rgb(54, 162, 235)"
     });
     datasets.push({
       label: "Monthly (same annual total)",
       data: secondaryBalances,
       fill: false,
-      tension: 0.2
+      tension: 0.2,
+      borderColor: "rgb(255, 99, 132)"
     });
   } else {
     datasets.push({
@@ -130,6 +164,8 @@ function updateChart(years, primaryBalances, secondaryBalances = null) {
 
 
 
+
+
 function compareWeeklyMonthly(){
   const P = parseFloat(document.getElementById("principal").value);
   const contribAmount = parseFloat(document.getElementById("contribution").value);
@@ -143,16 +179,14 @@ function compareWeeklyMonthly(){
     return;
   }
 
-  
-  const resultsEl = document.getElementById("results");
-  if (resultsEl) resultsEl.style.display = "block";
-// Fair comparison: keep the annual total constant based on what the user entered.
+  // Fair comparison: keep the annual total constant based on what the user entered.
   const annualTotal = (selectedFreq === "weekly") ? contribAmount * 52 : contribAmount * 12;
   const weeklyAmt = annualTotal / 52;
   const monthlyAmt = annualTotal / 12;
 
-  const weekly = computeFutureValue(P, weeklyAmt, 52, r, n, t);
-  const monthly = computeFutureValue(P, monthlyAmt, 12, r, n, t);
+  // Use a daily timing simulation for the compare view so weekly deposits happen earlier than monthly deposits.
+  const weekly = computeFutureValueDaily(P, weeklyAmt, 52, r, n, t);
+  const monthly = computeFutureValueDaily(P, monthlyAmt, 12, r, n, t);
 
   const diff = weekly.futureValue - monthly.futureValue;
   const pct = (monthly.futureValue > 0) ? (diff / monthly.futureValue) * 100 : 0;
@@ -165,17 +199,22 @@ function compareWeeklyMonthly(){
       <div class="row"><span class="label">Monthly (same annual total)</span><span class="value">${formatCurrencyUSD(monthly.futureValue)}</span></div>
       <div class="row"><span class="label">Difference</span><span class="value">${formatCurrencyUSD(diff)} (${pct.toFixed(2)}%)</span></div>
       <div class="muted" style="margin-top:10px;">
-        Assumes the same annual contribution total (${formatCurrencyUSD(annualTotal)} / year). Weekly tends to be slightly higher because contributions get invested sooner.
+        Assumes the same annual contribution total (${formatCurrencyUSD(annualTotal)} / year). Weekly can be slightly higher because contributions get invested sooner.
       </div>
     `;
   }
 
-  // Update table & the main (single) result based on the user's currently selected frequency.
+  // Show results area
+  const resultsEl = document.getElementById("results");
+  if (resultsEl) resultsEl.style.display = "block";
+
+  // Keep the main table + single-value result in sync with the user's current frequency.
   calculateCompoundInterest();
 
   // Re-draw the chart in compare mode (two lines).
   updateChart(weekly.years, weekly.balances, monthly.balances);
 }
+
 
 
 function applyParams() {
