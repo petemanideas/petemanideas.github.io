@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Compound Interest Calculator Australia | Compare Investing Scenarios</title>
+  <title>Compound Interest Calculator: How Much Will My Money Grow? | CalcCompoundInterest</title>
   <meta name="description" content="See how your money could grow with an initial amount, regular contributions, compound returns and time. Compare two scenarios side by side.">
-  <link rel="canonical" href="https://www.calccompoundinterest.com/compound-interest-calculator/">
+  <link rel="canonical" href="https://www.calccompoundinterest.com/grow.html">
   <style>
     :root{
-      --bg:#f6f8f2;
+      --bg:#f4f8f1;
       --card:#ffffff;
       --text:#1f2937;
       --muted:#5f6b76;
-      --border:#dfe8d8;
-      --border-strong:#cddbc5;
-      --green:#5f8f55;
-      --green-dark:#4f7b46;
-      --green-soft:#eef6e9;
+      --border:#d6e2cd;
+      --border-strong:#c4d4bb;
+      --green:#5f8251;
+      --green-dark:#4f7043;
+      --green-soft:#f3f8ef;
+      --header:#dfe5df;
+      --header-border:#c5cec5;
       --blue:#1f6aa5;
     }
     *{box-sizing:border-box}
@@ -34,8 +36,8 @@
       padding:0 16px;
     }
     .site-header{
-      background:#dceccf;
-      border-bottom:1px solid #bfd3b0;
+      background:var(--header);
+      border-bottom:1px solid var(--header-border);
     }
     .site-header .wrap{padding:14px 16px}
     .brand{
@@ -112,7 +114,7 @@
     }
     .btn:hover{background:var(--green-dark)}
     .btn.ghost{
-      background:#f4f8f1;
+      background:#f6fbf2;
       color:#264022;
       border-color:#c7d9c0;
     }
@@ -126,7 +128,7 @@
     .help{color:var(--muted);font-size:.95rem;margin:0 0 12px}
     .compare-wrap{margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}
     .subcard{
-      background:#fafcf9;
+      background:#fbfdf9;
       border:1px solid var(--border);
       border-radius:12px;
       padding:14px;
@@ -148,8 +150,17 @@
       border:1px solid var(--border);
       border-radius:12px;
       padding:12px;
+      line-height:1.35;
     }
-    .mini-stat strong{display:block;margin-top:4px;font-size:1.05rem}
+    .mini-stat strong{
+      display:block;
+      margin-top:6px;
+      font-size:1.05rem;
+    }
+    .comparison-stats-grid .mini-stat,
+    .extra-stats-grid .mini-stat{
+      min-height:92px;
+    }
     .difference-box{
       margin-top:16px;
       background:#fffaf0;
@@ -180,8 +191,8 @@
     th{background:#f4f8f1}
     .content-card{margin-top:24px}
     .footer{
-      background:#dceccf;
-      border-top:1px solid #bfd3b0;
+      background:var(--header);
+      border-top:1px solid var(--header-border);
       margin-top:28px;
     }
     .footer .wrap{padding:14px 16px}
@@ -203,15 +214,14 @@
         <a href="https://www.calccompoundinterest.com/retire.html">Retire</a> |
         <a href="https://www.calccompoundinterest.com/ETFvSavings.html">ETF vs Savings</a> |
         <a href="https://www.calccompoundinterest.com/startlate.html">Start Late?</a> |
-        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a> |
-        <a href="https://www.calccompoundinterest.com/articles/">Articles</a>
+        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
     <div class="eyebrow">Free calculator • Compare 2 scenarios</div>
-    <h1>Compound interest calculator</h1>
+    <h1>How much will my money grow?</h1>
     <p class="lede">See how your money could grow with an initial amount, regular contributions, compound returns and time. This calculator also lets you compare a second scenario side by side so you can test different investing ideas.</p>
 
     <div class="grid">
@@ -326,22 +336,53 @@
 
         <div class="compare-results-grid">
           <div class="result-box">
-            <div>Main scenario future value</div>
+            <div>Scenario 1 future value</div>
             <div class="big-number" id="finalBalance">$0</div>
             <div id="summaryText">Enter your numbers and click calculate.</div>
           </div>
           <div class="result-box secondary">
-            <div>Comparison scenario future value</div>
+            <div>Scenario 2 future value</div>
             <div class="big-number" id="compareFinalBalance">$0</div>
             <div id="compareSummaryText">Enter comparison values and click calculate.</div>
           </div>
         </div>
 
-        <div class="stats-grid">
-          <div class="mini-stat">Total contributed<strong id="totalContributed">$0</strong></div>
-          <div class="mini-stat">Total growth<strong id="totalGrowth">$0</strong></div>
-          <div class="mini-stat">Contribution count<strong id="contributionCount">0</strong></div>
-          <div class="mini-stat">Monthly equivalent<strong id="monthlyEquivalent">$0</strong></div>
+        <div class="stats-grid comparison-stats-grid">
+          <div class="mini-stat">
+            Scenario 1 total contributed
+            <strong id="totalContributed">$0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 1 total growth
+            <strong id="totalGrowth">$0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 2 total contributed
+            <strong id="compareTotalContributed">$0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 2 total growth
+            <strong id="compareTotalGrowth">$0</strong>
+          </div>
+        </div>
+
+        <div class="stats-grid extra-stats-grid" style="margin-top:14px;">
+          <div class="mini-stat">
+            Scenario 1 contribution count
+            <strong id="contributionCount">0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 1 monthly equivalent
+            <strong id="monthlyEquivalent">$0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 2 contribution count
+            <strong id="compareContributionCount">0</strong>
+          </div>
+          <div class="mini-stat">
+            Scenario 2 monthly equivalent
+            <strong id="compareMonthlyEquivalent">$0</strong>
+          </div>
         </div>
 
         <div class="difference-box">
@@ -381,6 +422,7 @@
       <h2 style="margin-top:24px;">What compound interest means</h2>
       <p>Compound interest means your money can grow not only from your original amount and new contributions, but also from the returns already earned along the way. Over longer time frames, this can make a very large difference.</p>
       <p>The calculator above is designed as an educational estimate. Real-world results can vary because of fees, taxes, inflation, market changes, contribution timing and actual investment performance.</p>
+      <p><strong>Calculation note:</strong> this version uses end-of-period contributions and applies interest at the selected compounding frequency, so weekly, fortnightly, monthly, yearly and mixed-frequency comparisons stay consistent.</p>
       <p>Want the simpler explanation? Visit <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How compound interest works</a>.</p>
 
       <h2 style="margin-top:24px;">Related calculators and articles</h2>
@@ -397,8 +439,7 @@
         <a href="https://www.calccompoundinterest.com/retire.html">Retire</a> |
         <a href="https://www.calccompoundinterest.com/ETFvSavings.html">ETF vs Savings</a> |
         <a href="https://www.calccompoundinterest.com/startlate.html">Start Late?</a> |
-        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a> |
-        <a href="https://www.calccompoundinterest.com/articles/">Articles</a>
+        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a>
       </div>
     </div>
   </footer>
@@ -426,50 +467,82 @@
       return amount;
     }
 
+    function gcd(a, b) {
+      a = Math.abs(Math.round(a));
+      b = Math.abs(Math.round(b));
+      while (b) {
+        const t = b;
+        b = a % b;
+        a = t;
+      }
+      return a || 1;
+    }
+
+    function lcm(a, b) {
+      return Math.abs(a * b) / gcd(a, b);
+    }
+
     function calculateCompoundScenario(initialAmount, regularContribution, contributionFrequency, years, annualRate, compoundFrequency) {
-      const balance0 = Number(initialAmount) || 0;
-      const contribution = Number(regularContribution) || 0;
+      const balance0 = Math.max(Number(initialAmount) || 0, 0);
+      const contribution = Math.max(Number(regularContribution) || 0, 0);
       const totalYears = Math.max(Number(years) || 0, 0);
-      const annual = Math.max(Number(annualRate) || 0, 0) / 100;
+      const nominalAnnualRate = Math.max(Number(annualRate) || 0, 0) / 100;
       const compoundsPerYear = Math.max(Number(compoundFrequency) || 12, 1);
-      const totalPeriods = Math.max(Math.round(totalYears * compoundsPerYear), 0);
       const contributionPpy = periodsPerYear(contributionFrequency);
 
+      const stepsPerYear = lcm(compoundsPerYear, contributionPpy);
+      const totalSteps = Math.round(totalYears * stepsPerYear);
+      const contributionEvery = contribution > 0 ? Math.max(1, Math.round(stepsPerYear / contributionPpy)) : Infinity;
+      const compEvery = Math.max(1, Math.round(stepsPerYear / compoundsPerYear));
+      const periodicRate = nominalAnnualRate / compoundsPerYear;
+
       let balance = balance0;
-      let totalContributed = balance0;
       let contributionCount = 0;
+      let nextYearStep = stepsPerYear;
       const points = [];
+      const wholeYears = Math.floor(totalYears);
 
-      for (let period = 1; period <= totalPeriods; period++) {
-        balance *= (1 + annual / compoundsPerYear);
+      if (totalSteps === 0) {
+        return {
+          finalBalance: balance0,
+          totalContributed: balance0,
+          totalGrowth: 0,
+          contributionCount: 0,
+          monthlyEquivalent: monthlyEquivalent(contribution, contributionFrequency),
+          points: [{ label: 'Year 0', value: balance0 }]
+        };
+      }
 
-        const currentYear = period / compoundsPerYear;
-        const expectedContributions = Math.floor(currentYear * contributionPpy + 1e-9);
-        const newContributions = expectedContributions - contributionCount;
-        if (newContributions > 0) {
-          const addition = newContributions * contribution;
-          balance += addition;
-          totalContributed += addition;
-          contributionCount += newContributions;
+      for (let step = 1; step <= totalSteps; step++) {
+        if (step % compEvery === 0 && periodicRate !== 0) {
+          balance *= (1 + periodicRate);
+        }
+        if (step % contributionEvery === 0) {
+          balance += contribution;
+          contributionCount += 1;
         }
 
-        const yearMark = period / compoundsPerYear;
-        if (Math.abs(yearMark - Math.round(yearMark)) < 1e-9 || period === totalPeriods) {
-          const labelYear = period === totalPeriods ? totalYears : Math.round(yearMark);
-          points.push({
-            label: 'Year ' + Math.max(1, Math.round(labelYear || 1)),
-            value: balance
-          });
+        if (step === nextYearStep && points.length < wholeYears) {
+          points.push({ label: 'Year ' + (points.length + 1), value: balance });
+          nextYearStep += stepsPerYear;
         }
       }
 
+      if (totalYears > wholeYears || points.length === 0) {
+        points.push({
+          label: totalYears % 1 === 0 ? 'Year ' + totalYears : 'Year ' + totalYears,
+          value: balance
+        });
+      }
+
+      const totalContributed = balance0 + contribution * contributionCount;
       return {
         finalBalance: balance,
         totalContributed: totalContributed,
         totalGrowth: balance - totalContributed,
         contributionCount: contributionCount,
         monthlyEquivalent: monthlyEquivalent(contribution, contributionFrequency),
-        points: points.length ? points : [{ label: 'Year 1', value: balance }]
+        points: points
       };
     }
 
@@ -552,12 +625,12 @@
       ctx.fillStyle = '#5f8f55';
       ctx.fillRect(w - 180, 16, 14, 14);
       ctx.fillStyle = '#334155';
-      ctx.fillText('Main scenario', w - 160, 28);
+      ctx.fillText('Scenario 1', w - 160, 28);
       if (pointsB) {
         ctx.fillStyle = '#1f6aa5';
         ctx.fillRect(w - 180, 38, 14, 14);
         ctx.fillStyle = '#334155';
-        ctx.fillText('Comparison scenario', w - 160, 50);
+        ctx.fillText('Scenario 2', w - 160, 50);
       }
     }
 
@@ -599,10 +672,14 @@
       if (compareYears > 0 && (compareInitial > 0 || compareContribution > 0)) {
         compare = calculateCompoundScenario(compareInitial, compareContribution, compareFrequency, compareYears, compareRate, compoundFrequency);
         document.getElementById('compareFinalBalance').textContent = formatCurrency(compare.finalBalance);
-        document.getElementById('compareSummaryText').textContent = 'Comparison scenario: ' + formatCurrency(compareInitial) + ' to start, plus ' + formatCurrency(compareContribution) + ' ' + compareFrequency + ', over ' + compareYears + ' years at ' + compareRate + '% could grow to about ' + formatCurrency(compare.finalBalance) + '.';
+        document.getElementById('compareSummaryText').textContent = 'Scenario 2: ' + formatCurrency(compareInitial) + ' to start, plus ' + formatCurrency(compareContribution) + ' ' + compareFrequency + ', over ' + compareYears + ' years at ' + compareRate + '% could grow to about ' + formatCurrency(compare.finalBalance) + '.';
+        document.getElementById('compareTotalContributed').textContent = formatCurrency(compare.totalContributed);
+        document.getElementById('compareTotalGrowth').textContent = formatCurrency(compare.totalGrowth);
+        document.getElementById('compareContributionCount').textContent = compare.contributionCount.toLocaleString('en-AU');
+        document.getElementById('compareMonthlyEquivalent').textContent = formatCurrency(compare.monthlyEquivalent);
 
         const diff = main.finalBalance - compare.finalBalance;
-        const winner = diff > 0 ? 'Main scenario' : diff < 0 ? 'Comparison scenario' : 'Both scenarios';
+        const winner = diff > 0 ? 'Scenario 1' : diff < 0 ? 'Scenario 2' : 'Both scenarios';
         const absDiff = Math.abs(diff);
         document.getElementById('differenceText').textContent = absDiff === 0
           ? 'Both scenarios finish at the same estimated value.'
@@ -610,6 +687,10 @@
       } else {
         document.getElementById('compareFinalBalance').textContent = '$0';
         document.getElementById('compareSummaryText').textContent = 'Enter comparison values and click calculate.';
+        document.getElementById('compareTotalContributed').textContent = '$0';
+        document.getElementById('compareTotalGrowth').textContent = '$0';
+        document.getElementById('compareContributionCount').textContent = '0';
+        document.getElementById('compareMonthlyEquivalent').textContent = '$0';
         document.getElementById('differenceText').textContent = 'Calculate both scenarios to see which one ends higher and by how much.';
       }
 
