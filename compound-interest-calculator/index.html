@@ -1,110 +1,125 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCH5TZH602"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCH5TZH602');
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Compound Interest Calculator: How Much Will My Money Grow? | CalcCompoundInterest</title>
   <meta name="description" content="See how your money could grow with an initial amount, regular contributions, compound returns and time. Compare two scenarios side by side.">
   <link rel="canonical" href="https://www.calccompoundinterest.com/grow.html">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308191074184260"
+     crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/site.css">
+
   <style>
     :root{
-      --bg:#f4f8f1;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#5f6b76;
-      --border:#d6e2cd;
-      --border-strong:#c4d4bb;
-      --green:#5f8251;
-      --green-dark:#4f7043;
-      --green-soft:#f3f8ef;
-      --header:#dfe5df;
-      --header-border:#c5cec5;
-      --blue:#1f6aa5;
+      --calc-bg:#f4f8f1;
+      --calc-card:#ffffff;
+      --calc-text:#1f2937;
+      --calc-muted:#5f6b76;
+      --calc-border:#d6e2cd;
+      --calc-border-strong:#c4d4bb;
+      --calc-green:#5f8251;
+      --calc-green-dark:#4f7043;
+      --calc-green-soft:#f3f8ef;
+      --calc-blue:#1f6aa5;
     }
+
     *{box-sizing:border-box}
+
     body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+      background:var(--calc-bg);
+      color:var(--calc-text);
     }
-    a{color:#2b5c27}
-    .wrap{
+
+    .calculator-wrap{
       max-width:1180px;
       margin:0 auto;
-      padding:0 16px;
+      padding:24px 16px 38px;
     }
-    .site-header{
-      background:var(--header);
-      border-bottom:1px solid var(--header-border);
-    }
-    .site-header .wrap{padding:14px 16px}
-    .brand{
-      display:inline-block;
-      color:#23401f;
-      text-decoration:none;
-      font-weight:800;
-      font-size:1.15rem;
-      margin-bottom:8px;
-    }
-    .topnav{
-      color:#355133;
-      font-weight:700;
-    }
-    .topnav a{
-      color:#23401f;
-      text-decoration:none;
-    }
-    .topnav a:hover,.brand:hover,.footnav a:hover{text-decoration:underline}
-    main.wrap{padding-top:24px;padding-bottom:38px}
-    h1,h2,h3{line-height:1.2;margin-top:0}
+
     .eyebrow{
       color:#4e6b47;
       font-size:.95rem;
       font-weight:700;
       margin-bottom:8px;
     }
-    .lede{max-width:860px;margin:0 0 22px}
+
+    .lede{
+      max-width:860px;
+      margin:0 0 22px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:1.08fr 0.92fr;
       gap:24px;
       align-items:start;
     }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
+
+    .calc-card{
+      background:var(--calc-card);
+      border:1px solid var(--calc-border);
       border-radius:16px;
       padding:20px;
       box-shadow:0 3px 14px rgba(0,0,0,.04);
     }
+
     .field-grid,.compare-grid,.stats-grid,.compare-results-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
     }
-    .field{display:flex;flex-direction:column}
-    label{font-weight:700;margin-bottom:6px}
-    input,select{
+
+    .field{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .field label{
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .field input,
+    .field select{
       width:100%;
       height:48px;
       min-height:48px;
       padding:11px 12px;
-      border:1px solid var(--border-strong);
+      border:1px solid var(--calc-border-strong);
       border-radius:10px;
       background:#fff;
-      color:var(--text);
+      color:var(--calc-text);
       font:inherit;
       line-height:1.2;
     }
-    select{padding-right:34px}
-    .btn-row,.scenario-row{display:flex;flex-wrap:wrap;gap:10px}
+
+    .field select{padding-right:34px}
+
+    .btn-row,.scenario-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
     .btn-row{margin-top:18px}
-    .btn{
+
+    .calc-btn2{
       appearance:none;
-      border:1px solid var(--green);
-      background:var(--green);
+      border:1px solid var(--calc-green);
+      background:var(--calc-green);
       color:#fff;
       border-radius:10px;
       padding:12px 16px;
@@ -112,55 +127,89 @@
       font-weight:700;
       cursor:pointer;
     }
-    .btn:hover{background:var(--green-dark)}
-    .btn.ghost{
+
+    .calc-btn2:hover{
+      background:var(--calc-green-dark);
+    }
+
+    .calc-btn2.ghost{
       background:#f6fbf2;
       color:#264022;
       border-color:#c7d9c0;
     }
-    .btn.ghost:hover{background:#e8f1e3}
-    .scenario-row .btn{
+
+    .calc-btn2.ghost:hover{
+      background:#e8f1e3;
+    }
+
+    .scenario-row .calc-btn2{
       background:#fff;
       color:#355b2f;
       border-color:#b8cfb0;
     }
-    .scenario-row .btn:hover{background:#f3f9ef}
-    .help{color:var(--muted);font-size:.95rem;margin:0 0 12px}
-    .compare-wrap{margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}
+
+    .scenario-row .calc-btn2:hover{
+      background:#f3f9ef;
+    }
+
+    .help{
+      color:var(--calc-muted);
+      font-size:.95rem;
+      margin:0 0 12px;
+    }
+
+    .compare-wrap{
+      margin-top:22px;
+      padding-top:20px;
+      border-top:1px solid var(--calc-border);
+    }
+
     .subcard{
       background:#fbfdf9;
-      border:1px solid var(--border);
+      border:1px solid var(--calc-border);
       border-radius:12px;
       padding:14px;
     }
+
     .result-box{
-      background:var(--green-soft);
+      background:var(--calc-green-soft);
       border:1px solid #d6e6cf;
       border-radius:14px;
       padding:16px;
       margin-bottom:16px;
     }
+
     .result-box.secondary{
       background:#eef4fb;
       border-color:#d7e4f2;
     }
-    .big-number{font-size:2rem;font-weight:800;line-height:1.1;margin:6px 0}
+
+    .big-number{
+      font-size:2rem;
+      font-weight:800;
+      line-height:1.1;
+      margin:6px 0;
+    }
+
     .mini-stat{
       background:#fff;
-      border:1px solid var(--border);
+      border:1px solid var(--calc-border);
       border-radius:12px;
       padding:12px;
       line-height:1.35;
     }
+
     .mini-stat strong{
       display:block;
       margin-top:6px;
       font-size:1.05rem;
     }
+
     .comparison-stats-grid .mini-stat,
     .extra-stats-grid .mini-stat{
       min-height:92px;
     }
+
     .difference-box{
       margin-top:16px;
       background:#fffaf0;
@@ -168,67 +217,107 @@
       border-radius:14px;
       padding:16px;
     }
-    .difference-box strong{font-size:1.05rem}
+
+    .difference-box strong{
+      font-size:1.05rem;
+    }
+
     .chart-wrap{
       margin-top:18px;
       overflow:hidden;
-      border:1px solid var(--border);
+      border:1px solid var(--calc-border);
       border-radius:14px;
       background:#fff;
       padding:10px;
     }
-    #growthChart{width:100%;max-width:100%;height:340px;display:block}
-    .table-wrap{overflow-x:auto;margin-top:18px}
-    table{
+
+    #growthChart{
+      width:100%;
+      max-width:100%;
+      height:340px;
+      display:block;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+      margin-top:18px;
+    }
+
+    .calc-table{
       width:100%;
       border-collapse:collapse;
       background:#fff;
-      border:1px solid var(--border);
+      border:1px solid var(--calc-border);
       border-radius:14px;
       overflow:hidden;
     }
-    th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #e6eee1}
-    th{background:#f4f8f1}
-    .content-card{margin-top:24px}
-    .footer{
-      background:var(--header);
-      border-top:1px solid var(--header-border);
-      margin-top:28px;
+
+    .calc-table th,
+    .calc-table td{
+      padding:10px 12px;
+      text-align:left;
+      border-bottom:1px solid #e6eee1;
     }
-    .footer .wrap{padding:14px 16px}
-    .footnote{margin-top:8px;color:#3e5441;font-size:.95rem}
-    .footnav a{color:#23401f;text-decoration:none;font-weight:700}
+
+    .calc-table th{
+      background:#f4f8f1;
+    }
+
+    .content-card{
+      margin-top:24px;
+    }
+
+    .ad-container{
+      margin:20px 0;
+    }
+
+    .calc-links a{
+      word-break:break-word;
+    }
+
     @media (max-width:900px){
-      .grid,.field-grid,.compare-grid,.stats-grid,.compare-results-grid{grid-template-columns:1fr}
-      .big-number{font-size:1.7rem}
-      #growthChart{height:300px}
+      .grid,
+      .field-grid,
+      .compare-grid,
+      .stats-grid,
+      .compare-results-grid{
+        grid-template-columns:1fr;
+      }
+
+      .big-number{
+        font-size:1.7rem;
+      }
+
+      #growthChart{
+        height:300px;
+      }
     }
   </style>
 </head>
 <body>
+  <div id="site-header"></div>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="https://www.calccompoundinterest.com/">CalcCompoundInterest</a>
-      <div class="topnav">
-        <a href="https://www.calccompoundinterest.com/grow.html">Money Growth</a> |
-        <a href="https://www.calccompoundinterest.com/retire.html">Retire</a> |
-        <a href="https://www.calccompoundinterest.com/ETFvSavings.html">ETF vs Savings</a> |
-        <a href="https://www.calccompoundinterest.com/startlate.html">Start Late?</a> |
-        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
+  <main class="calculator-wrap">
     <div class="eyebrow">Free calculator • Compare 2 scenarios</div>
     <h1>How much will my money grow?</h1>
     <p class="lede">See how your money could grow with an initial amount, regular contributions, compound returns and time. This calculator also lets you compare a second scenario side by side so you can test different investing ideas.</p>
 
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3308191074184260"
+           data-ad-slot="2819994557"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
     <div class="grid">
-      <section class="card">
+      <section class="calc-card">
         <h2>Enter your numbers</h2>
-        <p class="help">Use the main scenario first, then add a comparison scenario if you want to test another option.</p>
+        <p class="help">Use Scenario 1 first, then add Scenario 2 if you want to compare another option.</p>
 
         <div class="field-grid">
           <div class="field">
@@ -269,36 +358,36 @@
         </div>
 
         <div class="btn-row">
-          <button class="btn" id="calculateBtn" type="button">Calculate</button>
-          <button class="btn ghost" id="resetBtn" type="button">Reset</button>
+          <button class="calc-btn2" id="calculateBtn" type="button">Calculate</button>
+          <button class="calc-btn2 ghost" id="resetBtn" type="button">Reset</button>
         </div>
 
         <h3 style="margin-top:24px;">Quick scenarios</h3>
         <p class="help">These are useful for testing article ideas and internal links.</p>
         <div class="scenario-row">
-          <button class="btn" type="button" data-scenario="0|100|weekly|10|8">$100/week for 10 years</button>
-          <button class="btn" type="button" data-scenario="0|500|monthly|20|8">$500/month for 20 years</button>
-          <button class="btn" type="button" data-scenario="10000|0|monthly|20|8">$10,000 once for 20 years</button>
-          <button class="btn" type="button" data-scenario="0|200|weekly|20|8">$200/week for 20 years</button>
-          <button class="btn" type="button" data-scenario="0|1000|monthly|10|8">$1,000/month for 10 years</button>
+          <button class="calc-btn2" type="button" data-scenario="0|100|weekly|10|8">$100/week for 10 years</button>
+          <button class="calc-btn2" type="button" data-scenario="0|500|monthly|20|8">$500/month for 20 years</button>
+          <button class="calc-btn2" type="button" data-scenario="10000|0|monthly|20|8">$10,000 once for 20 years</button>
+          <button class="calc-btn2" type="button" data-scenario="0|200|weekly|20|8">$200/week for 20 years</button>
+          <button class="calc-btn2" type="button" data-scenario="0|1000|monthly|10|8">$1,000/month for 10 years</button>
         </div>
 
         <div class="compare-wrap">
-          <h2>Comparison scenario</h2>
-          <p class="help">Use this to compare another investing path against the main one.</p>
+          <h2>Scenario 2 inputs</h2>
+          <p class="help">Use this to compare another investing path against Scenario 1.</p>
           <div class="compare-grid">
             <div class="subcard">
               <div class="field-grid">
                 <div class="field">
-                  <label for="compareInitial">Comparison initial amount ($)</label>
+                  <label for="compareInitial">Scenario 2 initial amount ($)</label>
                   <input type="number" id="compareInitial" value="0" min="0" step="100">
                 </div>
                 <div class="field">
-                  <label for="compareContribution">Comparison contribution ($)</label>
+                  <label for="compareContribution">Scenario 2 contribution ($)</label>
                   <input type="number" id="compareContribution" value="100" min="0" step="10">
                 </div>
                 <div class="field">
-                  <label for="compareFrequency">Comparison frequency</label>
+                  <label for="compareFrequency">Scenario 2 frequency</label>
                   <select id="compareFrequency">
                     <option value="weekly" selected>Weekly</option>
                     <option value="fortnightly">Fortnightly</option>
@@ -307,11 +396,11 @@
                   </select>
                 </div>
                 <div class="field">
-                  <label for="compareYears">Comparison years</label>
+                  <label for="compareYears">Scenario 2 years</label>
                   <input type="number" id="compareYears" value="10" min="1" max="60" step="1">
                 </div>
                 <div class="field">
-                  <label for="compareRate">Comparison annual return (%)</label>
+                  <label for="compareRate">Scenario 2 annual return (%)</label>
                   <input type="number" id="compareRate" value="8" min="0" max="30" step="0.1">
                 </div>
               </div>
@@ -324,15 +413,15 @@
                 <li>Start now vs start 10 years later</li>
               </ul>
               <div class="btn-row" style="margin-top:0;">
-                <button class="btn" type="button" id="loadExampleBtn">Load example comparison</button>
-                <button class="btn ghost" type="button" id="compareNowBtn">Compare now</button>
+                <button class="calc-btn2" type="button" id="loadExampleBtn">Load example comparison</button>
+                <button class="calc-btn2 ghost" type="button" id="compareNowBtn">Compare now</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="card">
+      <section class="calc-card">
         <h2>Results</h2>
 
         <div class="compare-results-grid">
@@ -398,7 +487,7 @@
         </div>
 
         <div class="table-wrap">
-          <table>
+          <table class="calc-table">
             <thead>
               <tr>
                 <th>Return rate</th>
@@ -411,39 +500,72 @@
       </section>
     </div>
 
-    <section class="card content-card">
+<div class="affiliate-box">
+  <h3>Plan Your Money Properly</h3>
+  <p>
+    If you're serious about reaching these results, a tool like Pocketsmith can help you
+    track your spending, plan future savings, and stay consistent.
+  </p>
+  <a href="https://my.pocketsmith.com/plans?ref=m2vlywm" target="_blank" rel="nofollow sponsored">
+    Try Pocketsmith →
+  </a>
+</div>  
+	  
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3308191074184260"
+           data-ad-slot="2819994557"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <section class="calc-card content-card">
       <h2>How to use this calculator</h2>
       <h3>1. Add your starting amount</h3>
       <p>Enter the amount you already have invested or saved. If you are starting from zero, just leave it at 0.</p>
+
       <h3>2. Add contributions and return</h3>
       <p>Choose how often you plan to contribute and enter an estimated annual return to model long-term growth.</p>
+
       <h3>3. Compare another path</h3>
-      <p>Use the comparison scenario to test questions like weekly vs monthly investing, or starting now vs later.</p>
+      <p>Use Scenario 2 to test questions like weekly vs monthly investing, or starting now vs later.</p>
 
       <h2 style="margin-top:24px;">What compound interest means</h2>
       <p>Compound interest means your money can grow not only from your original amount and new contributions, but also from the returns already earned along the way. Over longer time frames, this can make a very large difference.</p>
       <p>The calculator above is designed as an educational estimate. Real-world results can vary because of fees, taxes, inflation, market changes, contribution timing and actual investment performance.</p>
       <p><strong>Calculation note:</strong> this version uses end-of-period contributions and applies interest at the selected compounding frequency, so weekly, fortnightly, monthly, yearly and mixed-frequency comparisons stay consistent.</p>
-      <p>Want the simpler explanation? Visit <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How compound interest works</a>.</p>
+      <p>Want the simpler explanation? Visit <a href="/how-compound-interest-works.html">How compound interest works</a>.</p>
 
       <h2 style="margin-top:24px;">Related calculators and articles</h2>
-      <p><a href="https://www.calccompoundinterest.com/retire.html">How much do I need to retire?</a> · <a href="https://www.calccompoundinterest.com/ETFvSavings.html">ETF vs savings account calculator</a> · <a href="https://www.calccompoundinterest.com/startlate.html">What if I start investing late?</a> · <a href="https://www.calccompoundinterest.com/articles/100-a-week-10-years.html">$100 a week for 10 years</a> · <a href="https://www.calccompoundinterest.com/articles/500-a-month-20-years.html">$500 a month for 20 years</a> · <a href="https://www.calccompoundinterest.com/articles/10000-invested-once-20-years.html">$10,000 invested once for 20 years</a></p>
+      <p class="calc-links">
+        <a href="/retire.html">How much do I need to retire?</a> ·
+        <a href="/ETFvSavings.html">ETF vs savings account calculator</a> ·
+        <a href="/startlate.html">What if I start investing late?</a> ·
+        <a href="/articles/100-a-week-10-years.html">$100 a week for 10 years</a> ·
+        <a href="/articles/500-a-month-20-years.html">$500 a month for 20 years</a> ·
+        <a href="/articles/10000-invested-once-20-years.html">$10,000 invested once for 20 years</a>
+      </p>
     </section>
+
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3308191074184260"
+           data-ad-slot="2819994557"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footnote">Educational only. Not financial advice.</div>
-      <div class="footnav" style="margin-top:8px;">
-        <a href="https://www.calccompoundinterest.com/">Home</a> |
-        <a href="https://www.calccompoundinterest.com/grow.html">Money Growth</a> |
-        <a href="https://www.calccompoundinterest.com/retire.html">Retire</a> |
-        <a href="https://www.calccompoundinterest.com/ETFvSavings.html">ETF vs Savings</a> |
-        <a href="https://www.calccompoundinterest.com/startlate.html">Start Late?</a> |
-        <a href="https://www.calccompoundinterest.com/how-compound-interest-works.html">How it works</a>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <script src="/includes.js"></script>
 
   <script>
     function formatCurrency(value) {
@@ -507,6 +629,7 @@
         return {
           finalBalance: balance0,
           totalContributed: balance0,
+
           totalGrowth: 0,
           contributionCount: 0,
           monthlyEquivalent: monthlyEquivalent(contribution, contributionFrequency),
@@ -537,6 +660,7 @@
       }
 
       const totalContributed = balance0 + contribution * contributionCount;
+
       return {
         finalBalance: balance,
         totalContributed: totalContributed,
@@ -627,6 +751,7 @@
       ctx.fillRect(w - 180, 16, 14, 14);
       ctx.fillStyle = '#334155';
       ctx.fillText('Scenario 1', w - 160, 28);
+
       if (pointsB) {
         ctx.fillStyle = '#1f6aa5';
         ctx.fillRect(w - 180, 38, 14, 14);
@@ -639,6 +764,7 @@
       const rates = [4, 6, 8, 10];
       const tbody = document.getElementById('rateTableBody');
       tbody.innerHTML = '';
+
       rates.forEach((rate) => {
         const result = calculateCompoundScenario(initialAmount, regularContribution, contributionFrequency, years, rate, compoundFrequency);
         const row = document.createElement('tr');
@@ -662,18 +788,30 @@
       const compareRate = parseFloat(document.getElementById('compareRate').value) || 0;
 
       const main = calculateCompoundScenario(initialAmount, regularContribution, contributionFrequency, years, annualRate, compoundFrequency);
+
       document.getElementById('finalBalance').textContent = formatCurrency(main.finalBalance);
       document.getElementById('totalContributed').textContent = formatCurrency(main.totalContributed);
       document.getElementById('totalGrowth').textContent = formatCurrency(main.totalGrowth);
       document.getElementById('contributionCount').textContent = main.contributionCount.toLocaleString('en-AU');
       document.getElementById('monthlyEquivalent').textContent = formatCurrency(main.monthlyEquivalent);
-      document.getElementById('summaryText').textContent = 'With ' + formatCurrency(initialAmount) + ' to start, plus ' + formatCurrency(regularContribution) + ' ' + contributionFrequency + ', over ' + years + ' years at ' + annualRate + '% annual return, your balance could grow to about ' + formatCurrency(main.finalBalance) + '.';
+      document.getElementById('summaryText').textContent =
+        'With ' + formatCurrency(initialAmount) +
+        ' to start, plus ' + formatCurrency(regularContribution) + ' ' + contributionFrequency +
+        ', over ' + years + ' years at ' + annualRate +
+        '% annual return, your balance could grow to about ' + formatCurrency(main.finalBalance) + '.';
 
       let compare = null;
+
       if (compareYears > 0 && (compareInitial > 0 || compareContribution > 0)) {
         compare = calculateCompoundScenario(compareInitial, compareContribution, compareFrequency, compareYears, compareRate, compoundFrequency);
+
         document.getElementById('compareFinalBalance').textContent = formatCurrency(compare.finalBalance);
-        document.getElementById('compareSummaryText').textContent = 'Scenario 2: ' + formatCurrency(compareInitial) + ' to start, plus ' + formatCurrency(compareContribution) + ' ' + compareFrequency + ', over ' + compareYears + ' years at ' + compareRate + '% could grow to about ' + formatCurrency(compare.finalBalance) + '.';
+        document.getElementById('compareSummaryText').textContent =
+          'Scenario 2: ' + formatCurrency(compareInitial) +
+          ' to start, plus ' + formatCurrency(compareContribution) + ' ' + compareFrequency +
+          ', over ' + compareYears + ' years at ' + compareRate +
+          '% could grow to about ' + formatCurrency(compare.finalBalance) + '.';
+
         document.getElementById('compareTotalContributed').textContent = formatCurrency(compare.totalContributed);
         document.getElementById('compareTotalGrowth').textContent = formatCurrency(compare.totalGrowth);
         document.getElementById('compareContributionCount').textContent = compare.contributionCount.toLocaleString('en-AU');
@@ -682,6 +820,7 @@
         const diff = main.finalBalance - compare.finalBalance;
         const winner = diff > 0 ? 'Scenario 1' : diff < 0 ? 'Scenario 2' : 'Both scenarios';
         const absDiff = Math.abs(diff);
+
         document.getElementById('differenceText').textContent = absDiff === 0
           ? 'Both scenarios finish at the same estimated value.'
           : winner + ' ends higher by about ' + formatCurrency(absDiff) + '.';
@@ -715,11 +854,13 @@
       document.getElementById('contributionFrequency').value = 'weekly';
       document.getElementById('years').value = 10;
       document.getElementById('annualRate').value = 8;
+
       document.getElementById('compareInitial').value = 0;
       document.getElementById('compareContribution').value = 500;
       document.getElementById('compareFrequency').value = 'monthly';
       document.getElementById('compareYears').value = 10;
       document.getElementById('compareRate').value = 8;
+
       calculate();
     }
 
@@ -730,11 +871,13 @@
       document.getElementById('years').value = 20;
       document.getElementById('annualRate').value = 8;
       document.getElementById('compoundFrequency').value = '12';
+
       document.getElementById('compareInitial').value = 0;
       document.getElementById('compareContribution').value = 100;
       document.getElementById('compareFrequency').value = 'weekly';
       document.getElementById('compareYears').value = 10;
       document.getElementById('compareRate').value = 8;
+
       calculate();
     }
 
@@ -753,3 +896,4 @@
     calculate();
   </script>
 </body>
+</html>
