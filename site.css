@@ -444,3 +444,38 @@ canvas{ max-width: 100%; margin-top: 12px; }
 .compare-results .row:last-child{ border-bottom: none; }
 .compare-results .label{ font-weight: 700; color: var(--heading); }
 .compare-results .value{ font-variant-numeric: tabular-nums; }
+
+.article-affiliate-box {
+  margin: 28px 0;
+  padding: 18px 20px;
+  background: #f8fbf8;
+  border-left: 4px solid #1e6b34;
+  border-radius: 8px;
+}
+
+.article-affiliate-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1e6b34;
+  font-size: 1.2rem;
+}
+
+.article-affiliate-box p {
+  margin-bottom: 10px;
+}
+
+.article-affiliate-link {
+  font-weight: 700;
+  text-decoration: none;
+  color: #1e6b34;
+}
+
+.article-affiliate-link:hover {
+  text-decoration: underline;
+}
+
+.affiliate-note {
+  margin: 18px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
