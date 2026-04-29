@@ -479,3 +479,20 @@ canvas{ max-width: 100%; margin-top: 12px; }
   font-size: 0.9rem;
   color: #666;
 }
+
+article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+article p,
+article li {
+  text-align: justify !important;
+  line-height: 1.6;
+}
+
+article h1,
+article h2,
+article h3 {
+  text-align: left;
+}
