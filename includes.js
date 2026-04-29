@@ -4,7 +4,7 @@ async function loadInclude(targetId, url) {
   if (!el) return;
 
   try {
-    const res = await fetch(url, { cache: "force-cache" });
+    const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     el.innerHTML = await res.text();
   } catch (e) {
