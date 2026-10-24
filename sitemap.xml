@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.calccompoundinterest.com/</loc></url>
-  <url><loc>https://www.calccompoundinterest.com/index.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/grow.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/retire.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/ETFvSavings.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/startlate.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/how-compound-interest-works.html</loc></url>
-  <url><loc>https://www.calccompoundinterest.com/articles/index.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/</loc></url>
   <url><loc>https://www.calccompoundinterest.com/articles/100-a-month-10-years.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/articles/100-a-month-20-years.html</loc></url>
   <url><loc>https://www.calccompoundinterest.com/articles/100-a-month-30-years.html</loc></url>
@@ -118,16 +117,10 @@
 <loc>https://www.calccompoundinterest.com/articles/how-much-will-10000-be-worth-in-30-years/</loc>
 </url>
 <url>
-<loc>https://www.calccompoundinterest.com/articles/200-a-week-invested-10-years/</loc>
-</url>
-<url>
 <loc>https://www.calccompoundinterest.com/articles/etf-vs-mutual-fund-returns/</loc>
 </url>
 <url>
 <loc>https://www.calccompoundinterest.com/articles/compound-interest-examples/</loc>
-</url>
-<url>
-  <loc>https://www.calccompoundinterest.com/compound-interest-calculator/</loc>
 </url>
 <url>
   <loc>https://www.calccompoundinterest.com/why-i-recommend-pocketsmith.html</loc>
@@ -135,4 +128,19 @@
 <url>
   <loc>https://www.calccompoundinterest.com/why-i-recommend-sharesight.html</loc>
 </url>
+  <url><loc>https://www.calccompoundinterest.com/affiliate-disclosure.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/15000-invested-once-25-years.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/20000-invested-once-15-years.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/ETFvsBonds.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/Etfvs401ksuperannuation.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/HighyieldsavingsvsCd.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/IndexfundvsETF.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/best-compound-interest-calculator.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/best-investment-tools.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/etf-vs-high-interest-savings-account.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/etf-vs-savings-account-australia.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/how-to-start-investing-australia.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/how-to-track-investment-portfolio-australia.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/invest-100-weekly-vs-400-monthly.html</loc></url>
+  <url><loc>https://www.calccompoundinterest.com/articles/invest-weekly-vs-monthly-which-is-better.html</loc></url>
 </urlset>
