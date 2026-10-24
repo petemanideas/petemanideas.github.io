@@ -250,6 +250,20 @@ th, td{ padding: 8px; text-align:right; }
 th{ background: #f2f2f2; }
 canvas{ max-width: 100%; margin-top: 12px; }
 
+/* Phones: tighten tables so results fit without sideways scrolling.
+   !important overrides the inline padding many article tables use. */
+@media (max-width: 600px){
+  table{ font-size: 0.85rem; }
+  th, td{ padding: 6px 4px !important; }
+}
+@media (max-width: 360px){
+  table{ font-size: 0.75rem; }
+  th, td{ padding: 5px 3px !important; }
+}
+
+/* Let long words (e.g. domain names) wrap in headings on narrow screens */
+h1, h2{ overflow-wrap: break-word; }
+
 /* Footer */
 .footer{
   margin-top: 40px;
