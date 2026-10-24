@@ -29,7 +29,7 @@ function highlightActiveNav() {
   if (!header) return;
 
   const path = (location.pathname || "/").replace(/\/+$/, "");
-  const isArticles = path.startsWith("/articles/");
+  const isArticles = path === "/articles" || path.startsWith("/articles/");
   const basename = path.split("/").pop() || "index.html";
 
   const links = header.querySelectorAll("nav a[href]");
@@ -40,7 +40,7 @@ function highlightActiveNav() {
       href === path ||
       href === ("/" + basename) ||
       (basename === "index.html" && (href === "/" || href === "/index.html")) ||
-      (isArticles && href === "/articles/index.html");
+      (isArticles && href === "/articles/");
 
     if (isActive) {
       a.classList.add("active");
